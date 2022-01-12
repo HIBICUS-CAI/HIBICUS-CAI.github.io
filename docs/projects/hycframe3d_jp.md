@@ -1,3 +1,9 @@
+---
+layout: default
+title: HycFrame3D
+description: Introduce about HycFrame3D
+---
+
 ![HycFrame3D_logo](../../assets/frame_logo.png)
 ## HycFrame3Dについて
 >HycFrame3DはWindowsをプラットフォームにして、汎用性が持っている通用3Dゲーム開発できるのフレームワークを目指して作った物であります。
