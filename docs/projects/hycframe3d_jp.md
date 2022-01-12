@@ -76,6 +76,12 @@ SystemがComponentに対して更新処理はvector中のデータを使い、�
 
 ### フレームを実行するため必要なもの（整合済）
 
+- 03_InputDevice 入力処理ライブラリー
+- 03_RenderSystem_DX11 DX11よりのレンダリングシステムライブラリー
+- 04_WindowManager WIN32アプリ管理ライブラリー
+- rapidjson JSONファイル解析ライブラリー
+- bullet 物理演算用ライブラリー（使う部分は当たり判定だけ）
+
 ### フレームがサポートしている内容
 
 ### 改善点
