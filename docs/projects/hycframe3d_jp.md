@@ -1,10 +1,9 @@
 ---
 layout: default
-title: HycFrame3D
-description: Introduce about HycFrame3D
+title: About HycFrame3D
 ---
 
-![HycFrame3D_logo](../../assets/frame_logo.png)
+![HycFrame3D_logo](../../assets/h3d_frame_logo.png)
 ## HycFrame3Dについて
 >HycFrame3DはWindowsをプラットフォームにして、汎用性が持っている通用3Dゲーム開発できるのフレームワークを目指して作った物であります。
 
@@ -58,7 +57,7 @@ HycFrame2Dは様々の問題点があったり、座標系の仕様もなかな�
 
 フレームワークのソフトウェアアーキテクチャーについて、お主に次の図のように組み立ています。
 
-![Frame Content](../../assets/frame_content.png)
+![Frame Content](../../assets/h3d_frame_content.png)
 
 前身としてのHycFrame2Dとの最大な改善点は、**ObjectとComponentの保存・管理の仕方**です。
 
@@ -74,11 +73,11 @@ SystemがComponentに対して更新処理はvector中のデータを使い、�
 
 私のやり方は、ComponentのステータスをDESTORYに設定した後一旦そのまま置いておいて、同時にmapでポインタを探し出す。そして、ポインタとvectorの先頭ポインタよりこのComponentのindexを計算、ある`std::queue`に入れて、mapからこのComponentのポインタを削除すれば、削除の部分は完了。
 
-![Comp Delete](../../assets/comp_delete.png)
+![Comp Delete](../../assets/h3d_comp_delete.png)
 
 そして追加する時、まずはその型のqueueから既存のindexを取り出す、vectorのindex番目のところに追加したい物に上書きすれば完成です。
 
-![Comp Insert](../../assets/comp_insert.png)
+![Comp Insert](../../assets/h3d_comp_insert.png)
 
 ### フレームを実行するため必要なもの（整合済）
 
