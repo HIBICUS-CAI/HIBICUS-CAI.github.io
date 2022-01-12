@@ -54,6 +54,26 @@ HycFrame2Dは様々の問題点があったり、座標系の仕様もなかな�
 
 ![Frame Content](../../assets/frame_content.png)
 
+前身としてのHycFrame2Dとの最大な改善点は、**ObjectとComponentの保存・管理の仕方**です。
+
+HycFrame2D時のやり方は、ObjectとComponent全部`new`で生成されていて、各Objectは所属のComponentポインタを更新順より`std::vector`メンバー変数に入れて保存して、そして更新するときはこの配列にある全てのComponentを一個ずつ更新関数を呼び出すということです。
+
+でもこういうやり方は問題点があります。まずComponentは全部バーチャル関数の形で更新を行うので、この部分はすでにパフォーマンスを下げている。その上、全てのObjectとComponentは`new`で生成して、全てのComponentの更新関数を呼ぶと、CPU Cacheにはほぼ利用されず、全部メモリからポインタの内容物を探したまで、CPUに読み込めないので、パフォーマンスはさらに下げられていると思います。
+
+そこで、こういう問題を解決ため、HycFrame3Dのやり方は、各Scene Nodeに対して、一つのObjects Containerと一つのComponents Containerを用意しています。中には各種類のComponent型の`std::vector`とそのComponentポインタ型の`std::unordered_map`があります。事前に`vector.reserve(MAX_COMP_SIZE)`で十分な大きさを確保して、配列にあるComponentを増やしてもポインタが無効にならないようにしています。
+
+SystemがComponentに対して更新処理はvector中のデータを使い、あるComponentのポインタを探すのは名前よりmapで検索を行っています。このような仕組みで、更新されているComponentはメモリに連続になって、CPU Cacheを利用して処理効率を上げますし、mapでの検索もO(1)に近い効率で行えます。
+
+でもこれでもう一つ新たな問題を招いてしまいました、特定のComponentをリリースすると、後ろ全てのComponentは前に移るので、mapにあるポインタはずれてしまう可能性があります。
+
+私のやり方は、ComponentのステータスをDESTORYに設定した後一旦そのまま置いておいて、同時にmapでポインタを探し出す。そして、ポインタとvectorの先頭ポインタよりこのComponentのindexを計算、ある`std::queue`に入れて、mapからこのComponentのポインタを削除すれば、削除の部分は完了。
+
+![Comp Delete](../../assets/comp_delete.png)
+
+そして追加する時、まずはその型のqueueから既存のindexを取り出す、vectorのindex番目のところに追加したい物に上書きすれば完成です。
+
+![Comp Insert](../../assets/comp_insert.png)
+
 ### フレームを実行するため必要なもの（整合済）
 
 ### フレームがサポートしている内容
