@@ -59,7 +59,7 @@ HycFrame2Dは様々の問題点があり、座標系の仕様もなかなか変�
 
 ![Frame Content](../../assets/h3d_frame_content.png)
 
-前身としてのHycFrame2Dと比べて最大な改善点は、**ObjectとComponentの保存・管理の仕方**です。
+前身としてのHycFrame2Dと比べて最大な改善点は、**描画パイプラインの進化**と**ObjectとComponentの保存・管理の仕方**です。描画パイプラインは[03_RenderSystem_DX11](https://github.com/HIBICUS-CAI/PreWorkRenderEngine)にかかっているので、レンダリングシステムについての文章に紹介させていただきます。
 
 HycFrame2D時のやり方は、ObjectとComponent全部`new`で生成して、各Objectは所属のComponentポインタを更新順より`std::vector`メンバー変数に入れて保存して、そして更新するときはこの配列にある全てのComponentを一個ずつ更新関数を呼び出すという仕組みです。
 
@@ -82,6 +82,8 @@ SystemがComponentに対して更新処理はvector中のデータを使い、�
 そして追加する時、まずはその型のqueueから既存のindexを取り出す、vectorのindex番目のところに追加したい物に上書きすれば完成です。
 
 ![Comp Insert](../../assets/h3d_comp_insert.png)
+
+HycFrame2Dを開発するときはまだECSのSystemがどのような役を担当しているかわかっていなかったが、今その重要性への理解は一歩深くにしたと思います。
 
 ### フレームを実行するため必要なもの（整合済）
 
@@ -112,6 +114,28 @@ Have 1 arguments:
 ```
 
 ### フレームがサポートしている内容
+
+お主に二つの内容に分けられています：
+
+- 関数ポインターより特別挙動のカスタマイズできるInputComponent & InteractComponet
+- その他多様な機能を提供しているComponents
+
+詳しい内容は以下の通り：
+
+| 利用できるObject種類 | Component種類           | 提供している機能                                                                                                                                                                                                                                  |
+| -------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Actor&UI             | [A/U]TransformComponent | Objectの位置、角度と大きさ調整<br>１フレーム前のデータをバックアップ<br>このフレーム内に編集されたデータをロールバック                                                                                                                            |
+| Actor&UI             | [A/U]TimerComponent     | 複数のタイマーを作る<br>特定タイマーの開始、一時停止、リセット処理<br>ある時間に越えたどうかの判断                                                                                                                                                |
+| Actor&UI             | [A/U]InputComponent     | レジスターされていた入力関数を入力処理段階で自動的に呼び出す<br>Unity C# Scriptのようなカスタマイズできる処理仕組み                                                                                                                               |
+| Actor&UI             | [A/U]InteractComponent  | レジスターされていた初期化関数を初期化段階で自動的に呼び出す<br>レジスターされていた更新用関数を更新段階で自動的に呼び出す<br>レジスターされていたリリース関数を削除する時自動的に呼び出す<br>Unity C# Scriptのようなカスタマイズできる処理仕組み |
+| Actor&UI             | [A/U]AudioComponent     | ロードされていた音声データをBGMとSEの形で再生                                                                                                                                                                                                     |
+| Actor                | [A]CollisionComponent   | Collision ShapeとCollision Object生成<br>あるObjectとの当たり結果<br>当たっている場所の世界空間座標を計算                                                                                                                                         |
+| Actor                | [A]MeshComponent        | モデルのInstanceを新規作成<br>モデル描画サポート<br>複数のモデルをグループ化して同じTransformデータで表示する                                                                                                                                     |
+| Actor                | [A]LightComponent       | 光源を作成する<br>光源のBloomと照度についてのデータを動的編集                                                                                                                                                                                     |
+| Actor                | [A]ParticleComponent    | パーティクルエミッターを作成する<br>エミッターの終始大きさ、終始色、噴出物理量とかのデータを動的編集                                                                                                                                              |
+| UI                   | [U]SpriteComponent      | テクスチャ描画サポート<br>UV値調整<br>色の偏移量調整                                                                                                                                                                                              |
+| UI                   | [U]AnimateComponent     | 複数のスプライトアニメーションを読み込み<br>特定のアニメーションに変わる<br>再生速度調整                                                                                                                                                          |
+| UI                   | [U]ButtonComponent      | 隣のボタンを選択する機能<br>このボタンは選択されているかどうかの判断<br>カーソルとキーボード操作サポート                                                                                                                                          |
 
 ### 改善点
 
