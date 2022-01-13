@@ -176,7 +176,7 @@ Have 1 arguments:
 最近結構CELESTEにハマっていて、それと似ている3D版を試しに作りたくて、このゲームを作りました。<br>
 [リリースバイナリファイル](https://github.com/HIBICUS-CAI/HycFrame3D/releases/tag/JADEITE_v1.0)<br>[ソースコード](https://github.com/HIBICUS-CAI/HycFrame3D/tree/game-backup/JADEITE)
 
-https://user-images.githubusercontent.com/48410127/149282080-22c38ba0-218d-41e1-9042-165fc1cbed2f.mp4
+<video src="https://user-images.githubusercontent.com/48410127/149282080-22c38ba0-218d-41e1-9042-165fc1cbed2f.mp4" controls="controls"></video>
 
 ![JADEITE_1](../../assets/jadeite_1.jpg)
 ![JADEITE_2](../../assets/jadeite_2.jpg)
