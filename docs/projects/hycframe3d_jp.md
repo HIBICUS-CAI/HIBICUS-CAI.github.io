@@ -139,7 +139,6 @@ Have 1 arguments:
 | (UI)<br>[U]SpriteComponent            | テクスチャ描画サポート<br>UV値調整<br>色の偏移量調整                                                                                                                                                                                              |
 | (UI)<br>[U]AnimateComponent           | 複数のスプライトアニメーションを読み込み<br>特定のアニメーションに変わる<br>再生速度調整                                                                                                                                                          |
 | (UI)<br>[U]ButtonComponent            | 隣のボタンを選択する機能<br>このボタンは選択されているかどうかの判断<br>カーソルとキーボード操作サポート                                                                                                                                          |
-
 <br>
 
 | ほかの内容    | 機能                                         |
@@ -149,4 +148,36 @@ Have 1 arguments:
 
 ### 改善点
 
+私の視点からこのフレームワークの完成度はそこそこ出来ていると思うが、まだ完備とは言えません。色々な改善すべき点が残っています。
+
+- Scene管理
+  - 現在のドローコールは選別せず一気にレンダリングシステムに渡しています、Instanceも利用しているが、異なるモデルの数がいっぱい増えたらかなりの無駄作業が出てしまうそうです、OctTreeやBSPなどの技術を導入すべきです
+- マルチスレッド
+  - System実行の部分にはお互いの優先順位を付けて、マルチスレッドで駆動すると効率を一層上がれるかもしれません
+  - RenderSystemのContainerはまだマルチスレッドに安全動作ができないので、HycFrame2Dのようなマルチスレッドベースのシーン遷移はまだできないです
+- 音声操作
+  - できれば3D空間のようなSE再生機能を作って欲しいです
+  - XAudioに関しての内容をもっと勉強する必要があります
+- 機能追加
+  - できればモデル（FBXとか）のアニメーションも導入したいです
+  - カメラを追加、操作できるComponentも導入したいです
+  - 文字列をそのままテクスチャに変更できる技術が欲しい、freetypeに関しての内容を勉強すべきです
+- AI向き
+  - AIをもっと簡単に動けるように、マップにNodeを付ける手段やComponentが欲しいです
+  - 効率いい道調べ方法（A*を改善）も勉強する必要があります
+
+もしできたら追々に追加する予定です。
+
 ### これで作っていた作品
+
+![JADEITE Logo](../../assets/jadeite_logo.png)
+
+>JADEITE、翡翠のことです。<br>
+最近結構CELESTEにハマっていて、それと似ている3D版を試しに作りたくて、このゲームを作りました。<br>
+[リリースバイナリファイル](https://github.com/HIBICUS-CAI/HycFrame3D/releases/tag/JADEITE_v1.0)<br>[ソースコード](https://github.com/HIBICUS-CAI/HycFrame3D/tree/game-backup/JADEITE)
+
+![JADEITE_1](../../assets/jadeite_1.jpg)
+![JADEITE_2](../../assets/jadeite_2.jpg)
+![JADEITE_3](../../assets/jadeite_3.jpg)
+![JADEITE_4](../../assets/jadeite_4.jpg)
+![JADEITE_5](../../assets/jadeite_5.jpg)
