@@ -139,6 +139,7 @@ Have 1 arguments:
 | (UI)<br>[U]SpriteComponent            | テクスチャ描画サポート<br>UV値調整<br>色の偏移量調整                                                                                                                                                                                              |
 | (UI)<br>[U]AnimateComponent           | 複数のスプライトアニメーションを読み込み<br>特定のアニメーションに変わる<br>再生速度調整                                                                                                                                                          |
 | (UI)<br>[U]ButtonComponent            | 隣のボタンを選択する機能<br>このボタンは選択されているかどうかの判断<br>カーソルとキーボード操作サポート                                                                                                                                          |
+
 <br>
 
 | ほかの内容    | 機能                                         |
@@ -176,7 +177,11 @@ Have 1 arguments:
 最近結構CELESTEにハマっていて、それと似ている3D版を試しに作りたくて、このゲームを作りました。<br>
 [リリースバイナリファイル](https://github.com/HIBICUS-CAI/HycFrame3D/releases/tag/JADEITE_v1.0)<br>[ソースコード](https://github.com/HIBICUS-CAI/HycFrame3D/tree/game-backup/JADEITE)
 
-<video src="https://user-images.githubusercontent.com/48410127/149282080-22c38ba0-218d-41e1-9042-165fc1cbed2f.mp4" controls="controls" style="max-width: 832px;"></video>
+簡易PV↓
+
+<video src="https://user-images.githubusercontent.com/48410127/149282080-22c38ba0-218d-41e1-9042-165fc1cbed2f.mp4" controls="controls" style="max-width: 730px;"></video>
+
+スクリーンショット↓
 
 ![JADEITE_1](../../assets/jadeite_1.jpg)
 ![JADEITE_2](../../assets/jadeite_2.jpg)
