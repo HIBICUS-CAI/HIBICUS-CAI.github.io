@@ -179,7 +179,7 @@ Have 1 arguments:
 
 簡易PV↓
 
-<video src="https://user-images.githubusercontent.com/48410127/149287358-a9a218c8-f66e-4d45-9b3c-2474eadd71d1.mp4" controls="controls"></video>
+<video src="https://user-images.githubusercontent.com/48410127/149282080-22c38ba0-218d-41e1-9042-165fc1cbed2f.mp4" controls="controls" style="max-width: 100%;"></video>
 
 スクリーンショット↓
 
