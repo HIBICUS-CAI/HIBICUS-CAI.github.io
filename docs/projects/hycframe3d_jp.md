@@ -7,7 +7,7 @@ title: About HycFrame3D
 ## HycFrame3Dについて
 >HycFrame3DはWindowsをプラットフォームにして、汎用性が持っている通用3Dゲーム開発できるのフレームワークを目指して作った物であります。
 
-- Entity-Component-Systemという考え方よりのソフトウェアアーキテクチャ
+- Entity-Component-System的な考え方よりのソフトウェアアーキテクチャ
 - 自由に構築可能な描画システム
 - 柔軟性を持っているシーン設計
 - 備えたよく使われる機能
