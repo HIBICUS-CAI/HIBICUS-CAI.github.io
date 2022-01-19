@@ -188,7 +188,7 @@ Have 1 arguments:
 ![JADEITE Logo](../../assets/jadeite_logo.png)
 
 >JADEITE、翡翠のことです。<br>
-最近結構CELESTEにハマっていて、それと似ている3D版を試しに作りたくて、このゲームを作りました。<br>
+最近結構CELESTEにハマっていて、それと似ている3D版を試しに作りたくて、このゲームを作りました。<br>詳しい内容はこの[ページ](jadeite_jp.md)ご覧ください<br>
 [リリースバイナリファイル](https://github.com/HIBICUS-CAI/HycFrame3D/releases/tag/JADEITE_v1.0)<br>[ソースコード](https://github.com/HIBICUS-CAI/HycFrame3D/tree/game-backup/JADEITE)
 
 簡易PV↓
