@@ -87,7 +87,7 @@ title: About JADEITE
 2. MRTでDiffuseテクスチャカラー、世界空間法線（必要なところにバンプマッピングを利用）、世界空間座標、マテリアルのDiffuse AlbedoとFresnel R0とShininessと奥行きを描画
     |シーン1|シーン2|
     |:---:|:---:|
-    |![Mrt_1_1](../../assets/jadeite_render_mrt_1_1.png)|![Mrt_1_2](../../assets/jadeite_render_mrt_1_2.png)|
+    |<img src="../../assets/jadeite_render_mrt_1_1.png" width="100%" />|<img src="../../assets/jadeite_render_mrt_1_2.png" width="100%" />|
     |![Mrt_2_1](../../assets/jadeite_render_mrt_2_1.png)|![Mrt_2_2](../../assets/jadeite_render_mrt_2_2.png)|
     |![Mrt_3_1](../../assets/jadeite_render_mrt_3_1.png)|![Mrt_3_2](../../assets/jadeite_render_mrt_3_2.png)|
     |![Mrt_4_1](../../assets/jadeite_render_mrt_4_1.png)|![Mrt_4_2](../../assets/jadeite_render_mrt_4_2.png)|
