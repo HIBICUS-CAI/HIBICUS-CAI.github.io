@@ -85,6 +85,7 @@ title: About JADEITE
 
 1. 描画パイプライン開始
 2. MRTでDiffuseテクスチャカラー、世界空間法線（必要なところにバンプマッピングを利用）、世界空間座標、マテリアルのDiffuse AlbedoとFresnel R0とShininessと奥行きを描画
+
     |シーン1|シーン2|
     |:---:|:---:|
     |<img src="../../assets/jadeite_render_mrt_1_1.png" width="100%" />|<img src="../../assets/jadeite_render_mrt_1_2.png" width="100%" />|
@@ -93,6 +94,7 @@ title: About JADEITE
     |![Mrt_4_1](../../assets/jadeite_render_mrt_4_1.png)|![Mrt_4_2](../../assets/jadeite_render_mrt_4_2.png)|
     |![Mrt_5_1](../../assets/jadeite_render_mrt_5_1.png)|![Mrt_5_2](../../assets/jadeite_render_mrt_5_2.png)|
     |![Mrt_6_1](../../assets/jadeite_render_mrt_6_1.png)|![Mrt_6_2](../../assets/jadeite_render_mrt_6_2.png)|
+
 3. 法線と奥行きによってSSAO（スクリーンスペース・アンビエント・オクルージョン）処理を行う、そして再び法線と奥行きによってEdge-preserving Smoothingを行う（エッジを崩さないブラー）
     |シーン1|シーン2|
     |:---:|:---:|
