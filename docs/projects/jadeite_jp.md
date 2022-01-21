@@ -63,13 +63,17 @@ title: About JADEITE
 記入方は以下の通り：
 
 - ゲームを一度実行して（**実行しないと出てこないです**）`(HycFrame3D/)Assets/Configs/AutoCreated_AdapterInfoInSystem.txt`を開く
+
     ![Adapter_Info](../../assets/h3d_adapter_config.png)
+
 - `(HycFrame3D/)Assets/Configs/render-deviceconfig.json`を開いて、**使いたいグラフィックカードの番号**を`force-adapter-index`後ろ`null`のところに上書きして保存してください。（nullはフレームワークより自動的に選択するという意味です）
 
-**もしそうしてもFPSはまだ足りない場合**、メモ帳で`(HycFrame3D/)Assets/Configs/render-effect-config.json`を開いて調整を行ってください。
+**もしそうしてもFPSはまだ足りない場合**、`(HycFrame3D/)Assets/Configs/render-effect-config.json`を開いて調整を行ってください。
 
-- メモ帳で`(HycFrame3D/)Assets/Configs/render-effect-config.json`を開く
+- `(HycFrame3D/)Assets/Configs/render-effect-config.json`を開く
+
     ![Adapter_Info](../../assets/jadeite_effect_config.png)
+
 - `ssao-blur-loop-count`の数を`0`から`4`まで調整して保存、`0`に近いと処理量が少ない、大きくと処理量が多い
 - `filter-level`後ろの数を`0`から`3`まで調整して保存、`0`に近いと処理量が少ない、`3`に近いと処理量が多い
 - まだ足りない場合、`particle-off`後ろの`false`を`true`にしてください（ですが、こうしたらビジュアル的にはちょっと減られると思います）

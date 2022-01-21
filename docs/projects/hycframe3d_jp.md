@@ -156,7 +156,9 @@ Have 1 arguments:
 記入方は以下の通り：
 
 - フレームワークを一度実行して（**実行しないと出てこないです**）`HycFrame3D/Assets/Configs/AutoCreated_AdapterInfoInSystem.txt`を開く
+
     ![Adapter_Info](../../assets/h3d_adapter_config.png)
+
 - `HycFrame3D/Assets/Configs/render-deviceconfig.json`を開いて、**使いたいグラフィックカードの番号**を`force-adapter-index`後ろ`null`のところに上書きして保存してください。（nullはフレームワークより自動的に選択するという意味です）
 
 ## 改善点
