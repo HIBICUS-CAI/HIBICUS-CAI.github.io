@@ -6,6 +6,10 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 [Test Link HycFrame3D](docs/projects/hycframe3d_jp.md)
 
+[Test Link Jadeite](docs/projects/jadeite_jp.md)
+
+[Test Link RS Lib](docs/projects/rendersystem_jp.md)
+
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
