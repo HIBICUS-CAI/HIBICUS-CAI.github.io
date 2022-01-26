@@ -37,4 +37,4 @@ title: About Render System Lib
 
 ## 自分なりに頑張ったところ
 
-## 改善すべきところ
+## 改善すべきなところ
