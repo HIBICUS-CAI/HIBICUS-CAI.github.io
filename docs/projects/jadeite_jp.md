@@ -78,6 +78,10 @@ title: About JADEITE
 - `filter-level`後ろの数を`0`から`3`まで調整して保存、`0`に近いと処理量が少ない、`3`に近いと処理量が多い
 - まだ足りない場合、`particle-off`後ろの`false`を`true`にしてください（ですが、こうしたらビジュアル的にはちょっと減られると思います）
 
+## プレイ動画
+
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/-1hSB3A7lp8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## アピールしたいところ
 
 - ゲームシステムはCELESTEを参照しました、簡単な操作でも色んな組合せができます
