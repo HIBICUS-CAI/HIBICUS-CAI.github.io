@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About Render System Lib
+title: About My Render System Lib
 ---
 
 ## レンダリングシステムライブラリーについて
