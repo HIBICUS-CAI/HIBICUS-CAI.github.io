@@ -61,15 +61,15 @@ title: About My Render System Lib
 - メインのデータコンテンツ（RSCommon.hにあるもの）
   - 定数
 
-  |            名前            |  値   |                      意味                      |
-  | :------------------------: | :---: | :--------------------------------------------: |
-  | MAX_STRUCTURED_BUFFER_SIZE |  256  |        StructuredBuffer構造体数の最大値        |
-  |     MAX_INSTANCE_SIZE      |  256  | 一つのDrawCallが関連できるInstance個数の最大値 |
-  |       MAX_LIGHT_SIZE       |  256  |                  光源数最大値                  |
-  | MAX_PARTICLE_EMITTER_SIZE  |  256  |          パーティクルエミッター最大値          |
-  |      MAX_SHADOW_SIZE       |   4   |   ShadowMapで描画できる影付き光源数の最大値    |
-  |        MESH_TEX_MAX        |  10   |   一つのMeshに添付できるテクスチャ数の最大値   |
-  |      RS_INVALID_ORDER      |   0   |            無効なPass・Topic実行順             |
+  |            名前            |  値   |                    意味                    |
+  | :------------------------: | :---: | :----------------------------------------: |
+  | MAX_STRUCTURED_BUFFER_SIZE |  256  |      StructuredBuffer構造体数の最大値      |
+  |     MAX_INSTANCE_SIZE      |  256  | 単一DrawCallに関連するInstance個数の最大値 |
+  |       MAX_LIGHT_SIZE       |  256  |                光源数最大値                |
+  | MAX_PARTICLE_EMITTER_SIZE  |  256  |        パーティクルエミッター最大値        |
+  |      MAX_SHADOW_SIZE       |   4   | ShadowMapで描画できる影付き光源数の最大値  |
+  |        MESH_TEX_MAX        |  10   |  単一Meshに添付できるテクスチャ数の最大値  |
+  |      RS_INVALID_ORDER      |   0   |          無効なPass・Topic実行順           |
 
   - 列挙型
 
@@ -87,7 +87,7 @@ title: About My Render System Lib
   - 構造体
 
   |           名前            |                       意味                       |
-  | :-----------------------: | :----------------------------------------------:|
+  | :-----------------------: | :----------------------------------------------: |
   |         CAM_INFO          |           カメラを作成するための構造体           |
   |        RS_CAM_INFO        |       ライブラリーが直接扱えるカメラデータ       |
   |        LIGHT_INFO         |            光源を作成するための構造体            |
