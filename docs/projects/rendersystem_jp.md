@@ -5,7 +5,7 @@ title: About My Render System Lib
 
 ## レンダリングシステムライブラリーについて
 
->異なるスタイルのレンダリングをサポートできる柔軟性を持って、Windowsプラットフォームでのリアルタイムレンダリングライブラリー
+>異なるスタイルの描画処理をサポートできる柔軟性を持ち、Windowsプラットフォームでのリアルタイムレンダリングライブラリーです
 >
 >[ソースコード](https://github.com/HIBICUS-CAI/PreWorkRenderEngine)
 
@@ -23,7 +23,7 @@ title: About My Render System Lib
   - DirectXデバイス管理
   - カメラ作成・管理
   - 光源作成・管理
-  - パーティクル作成・管理
+  - パーティクルエミッター作成・管理
   - Mesh作成・読み込み・管理
   - DrawCall管理
   - リソース管理
@@ -41,7 +41,7 @@ title: About My Render System Lib
 - **Topic** ある効果を得るため一連の処理
 - **Pass** 一つの処理がどう動作するを指示する、描画の最小単位
 
-私の理解より、リアルタイム（特にゲーム）のレンダリングは、同一のデータ異なる手段で色々なテクスチャに変換して、最後これらのテクスチャを併合し、最終バッファーに書き込むという流れです。
+私の理解より、リアルタイム（特にゲーム）のレンダリングは、同一のデータを異なる手段で色々なテクスチャに変換して、最後これらのテクスチャを併合し、最終バッファーに書き込むという流れです。
 
 そしてそういう「異なる手段」を柔軟に実行・追加・削除・編集できるため、私は一回の描画を一つのパイプラインの実行に、異なる手段をそれぞれのトピックにまとめました。
 
@@ -50,7 +50,7 @@ title: About My Render System Lib
 例えば影を描画するためShadow Mapを作りたいなら、以下のように処理を行うとすぐ実現できます。
 
 1. `RSPass_Base`を継承して奥行きだけ描画する`RSPass_ShadowMap`クラスを作成する
-2. `RSPass_ShadowMap`を確保する
+2. `RSPass_ShadowMap`型のオブジェクトを確保する
 3. 新しい`RSTopic`を作成、名を`shadow-topic`にして、さき確保した`RSPass_ShadowMap`のオブジェクトをこのTopicに追加し、実行順を設定する
 4. `shadow-topic`を入れたいPipelineに追加、実行順を設定する
 
@@ -102,11 +102,11 @@ title: About My Render System Lib
   |     RS_MATERIAL_INFO      |     ライブラリーが直接扱えるマテリアルデータ     |
   |       SUBMESH_INFO        |          単一Meshを作成するための構造体          |
   |      RS_SUBMESH_DATA      | ライブラリーが直接扱える単一Meshデータ（保存用） |
-  | RS_SUBMESH_DRAWCALL_DATA  |       Meshを描画ため必要なデータ（描画用）       |
-  |     RS_INSTANCE_DATA      |               扱えるInstanceデータ               |
-  | RS_INSTANCE_DRAWCALL_DATA |          各DrawCall添付するInstance集合          |
+  | RS_SUBMESH_DRAWCALL_DATA  |     Meshを描画するため必要なデータ（描画用）     |
+  |     RS_INSTANCE_DATA      |              扱えるInstance別データ              |
+  | RS_INSTANCE_DRAWCALL_DATA |         各DrawCallに添付するInstance集合         |
   |   RS_MESH_TEXTURE_INFO    |    Meshを描画するため添付するテクスチャデータ    |
-  |       RS_MISC_INFO        |             描画が利用可能な雑データ             |
+  |       RS_MISC_INFO        |          描画に利用されるかもな雑データ          |
   |     RS_DRAWCALL_DATA      |        一つのDrawCallに関する全てのデータ        |
   |     RS_RESOURCE_INFO      |           GPU側のリソースの標識データ            |
 
@@ -125,7 +125,7 @@ title: About My Render System Lib
 
 - 柔軟な組立
 
-  こういう柔軟性は複雑なTopicで特に役立っています。例えば、パーティカルのシミュレーションを行いたい場合、Emit、Simulate、Tile Render、BlendをそれぞれのPassにすると、描画仕方が見やすいしデバッグも問題を早く特定できると思います。もしぐちゃぐちゃに組み立てば、他の人がコード読むと戸惑うし、もしバッグがあればどっちが原因も分かりづらいでしょう。
+  こういう柔軟性は複雑なTopicで特に役立っています。例えば、パーティカルのシミュレーションを行いたい場合、Emit、Simulate、Tile Render、BlendをそれぞれのPassにすると、描画仕方が見やすいし、デバッグも問題を早く特定できると思います。もしぐちゃぐちゃに組み立てると、他の人がコードを読むとき戸惑うし、もしバッグがあればどっちが原因も分かりづらいでしょう。
 
 - マルチスレッドに適性がいい
 
