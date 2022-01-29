@@ -56,7 +56,66 @@ title: About My Render System Lib
 
 ![RSLib Pipeline Model](../../assets/rslib_pipeline_model.png)
 
-## ほかのサブシステム
+## ライブラリーデータコンテンツとサブシステム
+
+- メインのデータコンテンツ（RSCommon.hにあるもの）
+  - 定数
+
+    |名前|値|意味|
+    |:---:|:---:|:---:|
+    |MAX_STRUCTURED_BUFFER_SIZE|256|StructuredBuffer構造体数の最大値|
+    |MAX_INSTANCE_SIZE|256|一つのDrawCallが関連できるInstance個数の最大値|
+    |MAX_LIGHT_SIZE|256|光源数最大値|
+    |MAX_PARTICLE_EMITTER_SIZE|256|パーティクルエミッター最大値|
+    |MAX_SHADOW_SIZE|4|ShadowMapで描画できる影付き光源数の最大値|
+    |MESH_TEX_MAX|10|一つのMeshに添付できるテクスチャ数の最大値|
+    |RS_INVALID_ORDER|0|無効なPass・Topic実行順|
+
+  - 列挙型
+
+    |名前|意味|
+    |:---:|:---:|
+    |PASS_TYPE|Passの実行種類|
+    |LAYOUT_TYPE|InputLayoutの種類|
+    |DRAWCALL_TYPE|透明不透明等のDrawCall種類|
+    |LENS_TYPE|カメラの投影種類|
+    |LIGHT_TYPE|点光源の種類|
+    |PARTICLE_TEXTURE|ビルボードパーティクルのテクスチャ種類|
+    |TOPOLOGY_TYPE|ポリゴンの組立方式|
+    |RS_RESOURCE_TYPE|GPU側のリソース種類|
+
+  - 構造体
+
+    |名前|意味|
+    |:---:|:---:|
+    |CAM_INFO|カメラを作成するための構造体|
+    |RS_CAM_INFO|ライブラリーが直接扱えるカメラデータ|
+    |LIGHT_INFO|光源を作成するための構造体|
+    |RS_LIGHT_INFO|ライブラリーが直接扱える光源データ|
+    |PARTICLE_EMITTER_INFO|エミッターを作成するための構造体|
+    |RS_PARTICLE_EMITTER_INFO|ライブラリーが直接扱えるエミッターデータ|
+    |MATERIAL_INFO|マテリアルを作成するための構造体|
+    |RS_MATERIAL_INFO|ライブラリーが直接扱えるマテリアルデータ|
+    |SUBMESH_INFO|単一Meshを作成するための構造体|
+    |RS_SUBMESH_DATA|ライブラリーが直接扱える単一Meshデータ（保存用）|
+    |RS_SUBMESH_DRAWCALL_DATA|Meshを描画ため必要なデータ（描画用）|
+    |RS_INSTANCE_DATA|扱えるInstanceデータ|
+    |RS_INSTANCE_DRAWCALL_DATA|各DrawCall添付するInstance集合|
+    |RS_MESH_TEXTURE_INFO|Meshを描画するため添付するテクスチャデータ|
+    |RS_MISC_INFO|描画が利用可能な雑データ|
+    |RS_DRAWCALL_DATA|一つのDrawCallに関する全てのデータ|
+    |RS_RESOURCE_INFO|GPU側のリソースの標識データ|
+
+- サブシステム
+  - **レンダリングデバイス管理システム** レンダリングシステムを駆動するデバイスに関する管理
+  - **カメラ管理システム** カメラ操作・編集に関する処理
+  - **光源管理システム** 光源操作・編集に関する処理
+  - **パーティクルエミッター管理システム** エミッター操作・編集に関する処理
+  - **Mesh処理サポートシステム** 頂点データ・ジオメトリデータよりMeshデータを生成するシステム
+  - **リソース管理システム** GPU側のリソース管理に関する処理
+  - **静的リソース参照システム** 事前に用意したリソースの参照の提供
+  - **DrawCallプール** アップロードされた各種類のDrawCallを保存する所
+  - **Pipeline管理システム** Pipelineを入れ替え・追加・削除に関する処理
 
 ## 自分なりに頑張ったところ
 
