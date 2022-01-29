@@ -52,7 +52,7 @@ title: About My Render System Lib
 
 もし間違いがないなら、Pipelineを実行するとちゃんと動けるはずです。
 
-図に言う主に以下のように :
+図に言うと主に以下のように :
 
 ![RSLib Pipeline Model](../../assets/rslib_pipeline_model.png)
 
