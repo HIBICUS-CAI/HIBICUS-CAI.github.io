@@ -104,7 +104,7 @@ title: About My Render System Lib
   |      RS_SUBMESH_DATA      | ライブラリーが直接扱える単一Meshデータ（保存用） |
   | RS_SUBMESH_DRAWCALL_DATA  |     Meshを描画するため必要なデータ（描画用）     |
   |     RS_INSTANCE_DATA      |              扱えるInstance別データ              |
-  | RS_INSTANCE_DRAWCALL_DATA |         各DrawCallに添付するInstance集合         |
+  | RS_INSTANCE_DRAWCALL_DATA |        各DrawCallに添付するInstanceの集合        |
   |   RS_MESH_TEXTURE_INFO    |    Meshを描画するため添付するテクスチャデータ    |
   |       RS_MISC_INFO        |          描画に利用されるかもな雑データ          |
   |     RS_DRAWCALL_DATA      |        一つのDrawCallに関する全てのデータ        |
