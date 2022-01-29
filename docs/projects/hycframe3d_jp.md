@@ -59,7 +59,7 @@ HycFrame2Dは様々の問題点があり、座標系の仕様もなかなか変�
 
 ![Frame Content](../../assets/h3d_frame_content.png)
 
-前身としてのHycFrame2Dと比べて最大な改善点は、**描画パイプラインの進化**と**ObjectとComponentの保存・管理の仕方**です。描画パイプラインは[03_RenderSystem_DX11](https://github.com/HIBICUS-CAI/PreWorkRenderEngine)にかかっているので、レンダリングシステムについての文章に紹介させていただきます。
+前身としてのHycFrame2Dと比べて最大な改善点は、**描画パイプラインの進化**と**ObjectとComponentの保存・管理の仕方**です。描画パイプラインは[03_RenderSystem_DX11](https://github.com/HIBICUS-CAI/PreWorkRenderEngine)にかかっているので、[レンダリングシステムについての文章](rendersystem_jp.md)に紹介させていただきます。
 
 HycFrame2D時のやり方は、ObjectとComponent全部`new`で生成して、各Objectは所属のComponentポインタを更新順より`std::vector`メンバー変数に入れて保存して、そして更新するときはこの配列にある全てのComponentを一個ずつ更新関数を呼び出すという仕組みです。
 
