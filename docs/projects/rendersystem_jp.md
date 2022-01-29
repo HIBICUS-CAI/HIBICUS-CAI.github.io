@@ -119,7 +119,7 @@ title: About My Render System Lib
   - **DrawCallプール** アップロードされた各種類のDrawCallを保存する所
   - **Pipeline管理システム** Pipelineを入れ替え・追加・削除に関する処理
 
-## 自分なりに頑張ったところ
+## 特に頑張ったところ
 
 - 柔軟な組立
 
