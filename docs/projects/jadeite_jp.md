@@ -94,60 +94,60 @@ title: About JADEITE
 1. 描画パイプライン開始
 2. MRTでDiffuseテクスチャカラー、世界空間法線（必要なところにバンプマッピングを利用）、世界空間座標、マテリアルのDiffuse AlbedoとFresnel R0とShininessと奥行きを描画
 
-    |シーン1|シーン2|
-    |:---:|:---:|
-    |![Mrt_1_1](../../assets/jadeite_render_mrt_1_1.png)|![Mrt_1_2](../../assets/jadeite_render_mrt_1_2.png)|
-    |![Mrt_2_1](../../assets/jadeite_render_mrt_2_1.png)|![Mrt_2_2](../../assets/jadeite_render_mrt_2_2.png)|
-    |![Mrt_3_1](../../assets/jadeite_render_mrt_3_1.png)|![Mrt_3_2](../../assets/jadeite_render_mrt_3_2.png)|
-    |![Mrt_4_1](../../assets/jadeite_render_mrt_4_1.png)|![Mrt_4_2](../../assets/jadeite_render_mrt_4_2.png)|
-    |![Mrt_5_1](../../assets/jadeite_render_mrt_5_1.png)|![Mrt_5_2](../../assets/jadeite_render_mrt_5_2.png)|
-    |![Mrt_6_1](../../assets/jadeite_render_mrt_6_1.png)|![Mrt_6_2](../../assets/jadeite_render_mrt_6_2.png)|
+    |                       シーン1                       |                       シーン2                       |
+    | :-------------------------------------------------: | :-------------------------------------------------: |
+    | ![Mrt_1_1](../../assets/jadeite_render_mrt_1_1.png) | ![Mrt_1_2](../../assets/jadeite_render_mrt_1_2.png) |
+    | ![Mrt_2_1](../../assets/jadeite_render_mrt_2_1.png) | ![Mrt_2_2](../../assets/jadeite_render_mrt_2_2.png) |
+    | ![Mrt_3_1](../../assets/jadeite_render_mrt_3_1.png) | ![Mrt_3_2](../../assets/jadeite_render_mrt_3_2.png) |
+    | ![Mrt_4_1](../../assets/jadeite_render_mrt_4_1.png) | ![Mrt_4_2](../../assets/jadeite_render_mrt_4_2.png) |
+    | ![Mrt_5_1](../../assets/jadeite_render_mrt_5_1.png) | ![Mrt_5_2](../../assets/jadeite_render_mrt_5_2.png) |
+    | ![Mrt_6_1](../../assets/jadeite_render_mrt_6_1.png) | ![Mrt_6_2](../../assets/jadeite_render_mrt_6_2.png) |
 
 3. 法線と奥行きによってSSAO（スクリーンスペース・アンビエント・オクルージョン）処理を行う、そして再び法線と奥行きによってEdge-preserving Smoothingを行う（エッジを崩さないブラー）
 
-    |シーン1|シーン2|
-    |:---:|:---:|
-    |![Ssao_1_1](../../assets/jadeite_render_ssao_1_1.png)|![Ssao_1_2](../../assets/jadeite_render_ssao_1_2.png)|
-    |![Ssao_2_1](../../assets/jadeite_render_ssao_2_1.png)|![Ssao_2_2](../../assets/jadeite_render_ssao_2_2.png)|
+    |                        シーン1                        |                        シーン2                        |
+    | :---------------------------------------------------: | :---------------------------------------------------: |
+    | ![Ssao_1_1](../../assets/jadeite_render_ssao_1_1.png) | ![Ssao_1_2](../../assets/jadeite_render_ssao_1_2.png) |
+    | ![Ssao_2_1](../../assets/jadeite_render_ssao_2_1.png) | ![Ssao_2_2](../../assets/jadeite_render_ssao_2_2.png) |
 
 4. 影が出る光源から奥行きでシャドウマップを描画
 
-    |シーン1|シーン2|
-    |:---:|:---:|
-    |![Shadow_1](../../assets/jadeite_render_sdwmap_1.png)|![Shadow_2](../../assets/jadeite_render_sdwmap_2.png)|
+    |                        シーン1                        |                        シーン2                        |
+    | :---------------------------------------------------: | :---------------------------------------------------: |
+    | ![Shadow_1](../../assets/jadeite_render_sdwmap_1.png) | ![Shadow_2](../../assets/jadeite_render_sdwmap_2.png) |
 
 5. MRTで描画したものとSSAOマップとシャドウマップを合わせて、遅延レンダリングを行う（Deferred Rendering）
 
-    |シーン1|シーン2|
-    |:---:|:---:|
-    |![Deferred_1](../../assets/jadeite_render_defrender_1.png)|![Deferred_2](../../assets/jadeite_render_defrender_2.png)|
+    |                          シーン1                           |                          シーン2                           |
+    | :--------------------------------------------------------: | :--------------------------------------------------------: |
+    | ![Deferred_1](../../assets/jadeite_render_defrender_1.png) | ![Deferred_2](../../assets/jadeite_render_defrender_2.png) |
 
 6. スカイボックス（Skybox）を描画する
 
-    |シーン1|シーン2|
-    |:---:|:---:|
-    |![Sky_1](../../assets/jadeite_render_sky_1.png)|![Sky_2](../../assets/jadeite_render_sky_2.png)|
+    |                     シーン1                     |                     シーン2                     |
+    | :---------------------------------------------: | :---------------------------------------------: |
+    | ![Sky_1](../../assets/jadeite_render_sky_1.png) | ![Sky_2](../../assets/jadeite_render_sky_2.png) |
 
 7. 光源の描画と結果をブラーして作り出したシンプルなブルーム（Bloom）、そしてメインRTVにブレンド
 
-    |シーン1|シーン2|
-    |:---:|:---:|
-    |![Bloom_1_1](../../assets/jadeite_render_bloom_1_1.png)|![Bloom_1_2](../../assets/jadeite_render_bloom_1_2.png)|
-    |![Bloom_2_1](../../assets/jadeite_render_bloom_2_1.png)|![Bloom_2_2](../../assets/jadeite_render_bloom_2_2.png)|
-    |![Bloom_2_1](../../assets/jadeite_render_bloom_3_1.png)|![Bloom_2_2](../../assets/jadeite_render_bloom_3_2.png)|
+    |                         シーン1                         |                         シーン2                         |
+    | :-----------------------------------------------------: | :-----------------------------------------------------: |
+    | ![Bloom_1_1](../../assets/jadeite_render_bloom_1_1.png) | ![Bloom_1_2](../../assets/jadeite_render_bloom_1_2.png) |
+    | ![Bloom_2_1](../../assets/jadeite_render_bloom_2_1.png) | ![Bloom_2_2](../../assets/jadeite_render_bloom_2_2.png) |
+    | ![Bloom_2_1](../../assets/jadeite_render_bloom_3_1.png) | ![Bloom_2_2](../../assets/jadeite_render_bloom_3_2.png) |
 
 8. Compute Shaderでパーティクル生成、演算、カーリング、タイルレンダリング（particle emit, simulation, culling, tile rendering）
 9.  パーティクルをメインRTVにブレンド
 
-    |シーン1|シーン2|
-    |:---:|:---:|
-    |![Particle_1](../../assets/jadeite_render_ptcblend_1.png)|![Particle_2](../../assets/jadeite_render_ptcblend_2.png)|
+    |                          シーン1                          |                          シーン2                          |
+    | :-------------------------------------------------------: | :-------------------------------------------------------: |
+    | ![Particle_1](../../assets/jadeite_render_ptcblend_1.png) | ![Particle_2](../../assets/jadeite_render_ptcblend_2.png) |
 
 10. UIなどのSprite描画
 
-    |シーン1|シーン2|
-    |:---:|:---:|
-    |![Ui_1](../../assets/jadeite_render_ui_1.png)|![Ui_2](../../assets/jadeite_render_ui_2.png)|
+    |                    シーン1                    |                    シーン2                    |
+    | :-------------------------------------------: | :-------------------------------------------: |
+    | ![Ui_1](../../assets/jadeite_render_ui_1.png) | ![Ui_2](../../assets/jadeite_render_ui_2.png) |
 
 11. パイプライン完成
 
