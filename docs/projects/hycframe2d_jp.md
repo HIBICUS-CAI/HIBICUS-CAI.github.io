@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About HycFrame3D
+title: About HycFrame2D
 ---
 
 ## HycFrame2Dについて
