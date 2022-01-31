@@ -106,6 +106,34 @@ title: About HycFrame3D
 
 ## フレームを実行するため必要なもの（整合済）
 
+- [03_InputDevice](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) 自分で作った入力処理ライブラリー
+- [04_WindowManager](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) 自分で作ったWIN32アプリ管理ライブラリー
+- [texconv](https://github.com/microsoft/DirectXTex) イメージファイルをPNG・TGAファイルに変換するツール
+- [rapidjson](https://github.com/Tencent/rapidjson) JSONファイル解析ライブラリー
+- [GLFW3](https://www.glfw.org/) （OpenGLバージョンのみ）ウィンドウ制御ライブラリー
+
 ## 改善点
+
+まとめた改善点は以下の通り :
+
+- HycFrame3Dに解決済
+  - 描画システムの不足
+
+    このフレームワークの描画システムはただテクスチャをそのままでスクリーンに描画するだけ、OffsetColorがサポートしていてもシンプルすぎて、複雑な効果が作れないでしょう。
+
+    この不足を補完するため、[HycFrame3D](hycframe3d_jp.md)に実装された[レンダリングシステムライブラリー](rendersystem_jp.md)を開発し、ある程度で現段階の最適解を実用化しました。
+
+  - `new`でのメモリ確保よりの低い速度
+
+    このフレームワークのEntityとComponentは全部`new`で直接確保されています。処理は簡単ですが、CPUキャッシュをうまく利用できず、実行速度が減られると考えています。
+
+    [HycFrame3D](hycframe3d_jp.md)は同種類のComponentを一つの`vector`にまとめて、連続のデータ構造でCPUキャッシュ利用率を上げることができます。
+
+- まだ残っている問題点
+  - 無駄の描画処理
+
+    画面外のテクスチャはスクリーンに描画される可能性全くないですが、こういう無駄な描画のコマンドが相変わらず提出されて、実行速度を蚕食しています。
+
+    従って、こういう無駄なDrawCallを事前に検出し、素早く捨てべきです。
 
 ## これで作っていた作品
