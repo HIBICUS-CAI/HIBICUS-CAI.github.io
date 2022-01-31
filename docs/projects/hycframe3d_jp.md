@@ -117,7 +117,7 @@ Have 1 arguments:
 
 ## フレームがサポートしている内容
 
-お主に二つの内容に分けられています：
+お主に三つの内容に分けられています：
 
 - 関数ポインターより特別挙動のカスタマイズできるInputComponent & InteractComponet
 - InputとInteract以外多様な機能を提供しているComponents
