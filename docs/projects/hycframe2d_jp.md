@@ -26,17 +26,17 @@ title: About HycFrame2D
 
 コンポーネントについての情報 :
 
-|Component種類|提供している機能|
-|:----:|:----:|
-|(Actor&UI)<br>[A/U]TransformComponent|Objectの位置、角度と大きさ調整|
-|(Actor&UI)<br>[A/U]InputComponent|レジスターされていた入力関数を入力処理段階で自動的に呼び出す<br>Unity C# Scriptのようなカスタマイズできる処理仕組み|
-|(Actor&UI)<br>[A/U]InteractComponent|レジスターされていた初期化関数を初期化段階で自動的に呼び出す<br>レジスターされていた更新用関数を更新段階で自動的に呼び出す<br>レジスターされていたリリース関数を削除する時自動的に呼び出す<br>Unity C# Scriptのようなカスタマイズできる処理仕組み|
-|(Actor&UI)<br>[A/U]SpriteComponent|テクスチャの描画処理<br>Offset色処理|
-|(Actor)<br>[A]CollisionComponent|二つのものは当たっているかどうかを判断<br>円と四角形処理のサポート|
-|(Actor)<br>[A]AnimateComponent|複数のスプライトアニメーションを読み込み<br>特定のアニメーションに変わる<br>再生速度調整|
-|(Actor)<br>[A]TimerComponent|複数のタイマーを作る<br>特定タイマーの開始、一時停止、リセット処理<br>ある時間に越えたどうかの判断|
-|(UI)<br>[U]BtnMapComponent|隣のボタンを選択する機能<br>このボタンは選択されているかどうかの判断|
-|(UI)<br>[U]TextComponent|キャラクタ配列より自動的に文字を描画する仕組み<br>標準フォマードサポート（\n・\t等）|
+|             Component種類             |                                                                                                                 提供している機能                                                                                                                  |
+| :-----------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| (Actor&UI)<br>[A/U]TransformComponent |                                                                                                          Objectの位置、角度と大きさ調整                                                                                                           |
+|   (Actor&UI)<br>[A/U]InputComponent   |                                                                レジスターされていた入力関数を入力処理段階で自動的に呼び出す<br>Unity C# Scriptのようなカスタマイズできる処理仕組み                                                                |
+| (Actor&UI)<br>[A/U]InteractComponent  | レジスターされていた初期化関数を初期化段階で自動的に呼び出す<br>レジスターされていた更新用関数を更新段階で自動的に呼び出す<br>レジスターされていたリリース関数を削除する時自動的に呼び出す<br>Unity C# Scriptのようなカスタマイズできる処理仕組み |
+|  (Actor&UI)<br>[A/U]SpriteComponent   |                                                                                                       テクスチャの描画処理<br>Offset色処理                                                                                                        |
+|   (Actor)<br>[A]CollisionComponent    |                                                                                        二つのものは当たっているかどうかを判断<br>円と四角形処理のサポート                                                                                         |
+|    (Actor)<br>[A]AnimateComponent     |                                                                             複数のスプライトアニメーションを読み込み<br>特定のアニメーションに変わる<br>再生速度調整                                                                              |
+|     (Actor)<br>[A]TimerComponent      |                                                                        複数のタイマーを作る<br>特定タイマーの開始、一時停止、リセット処理<br>ある時間に越えたどうかの判断                                                                         |
+|      (UI)<br>[U]BtnMapComponent       |                                                                                       隣のボタンを選択する機能<br>このボタンは選択されているかどうかの判断                                                                                        |
+|       (UI)<br>[U]TextComponent        |                                                                               キャラクタ配列より自動的に文字を描画する仕組み<br>標準フォマードサポート（\n・\t等）                                                                                |
 
 ## コードの組み方
 
@@ -103,7 +103,84 @@ title: About HycFrame2D
 
     最初はXMLとJSONの間に迷ったが、最後はJSONがそのまま編集しやすいのでJSONを選びました。これでシーンを編集する時、いちいちコードを編集やコードの再コンパイルが要らず、JSONファイルを保存するだけで済ませました。
 
-    ![Scene Json 2](../../assets/h2d_scene_json_2.png)![Scene Json 1](../../assets/h2d_scene_json_1.png)
+    ```json
+    {
+      "scene-name": "first-scene",
+      "camera": [ 0.0, 0.0, 1920.0, 1080.0 ],
+      "actor": [
+        {
+          "actor-name": "test",
+          "update-order": 0,
+          "parent": null,
+          "components": [
+            {
+              "type": "transform",
+              "update-order": -1,
+              "init-value": [ 0.0, 0.0, 0.0 ],
+              "position": [ null, null, null ],
+              "rotation": [ null, null, null ],
+              "scale": [ 1.5, 1.5, 1.5 ]
+            },
+            {
+              "type": "sprite",
+              "update-order": 0,
+              "draw-order": 0,
+              "texture-path": "rom:/Assets/Texturestexture.tga",
+              "texture-width": 200.0,
+              "texture-height": 200.0
+            },
+            {
+              "type": "collision",
+              "update-order": 0,
+              "collision-type": "circle",
+              "collision-size": [ 100.0, 100.0 ],
+              "show-flag": true
+            },
+            {
+              "type": "animate",
+              "update-order": 0,
+              "animates": [
+                {
+                  "animate-name": "number",
+                  "animate-path": "rom:/AssetTextures/number.tga",
+                  "animate-stride": [ 0.2, 0.2 ],
+                  "max-count": 13,
+                  "repeat-flag": false,
+                  "frame-time": 1.0
+                }
+              ],
+              "init-animate": "number"
+            },
+            {
+              "type": "interaction",
+              "update-order": 0,
+              "init-func-name": "TestInit",
+              "update-func-name": "TestUpdate",
+              "destory-func-name": "TestDestory"
+            }
+          ]
+        }
+      ],
+      "ui": [
+        {
+          "ui-name": "test-ui2",
+          "update-order": 0,
+          "parent": null,
+          "components": [
+            {
+              "type": "text",
+              "update-order": 0,
+              "moji-path": "rom:/Assets/Textures/moji.tga",
+              "init-text": "it's a great day, \nあいうえお \nきょうはいいてんきて゛すね \nやゆよンは゛° nice \n 0321054.34654",
+              "init-size": [ 30.0, 30.0 ],
+              "init-position": [ -940.0, -520.0, 0.0 ],
+              "init-color": [ 0.0, 0.0, 0.0, ]
+            }
+          ]
+        }
+      ]
+    }
+    ```
 
     それと、JSON化したもう一つの利点は、もし将来こういうシーン編集処理をGUI化する必要があったら、従来難しい操作をJSONファイルの操作に変換することで、手間を取らずに実装できると考えています。
 
