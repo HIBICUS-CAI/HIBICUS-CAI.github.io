@@ -137,3 +137,22 @@ title: About HycFrame2D
     従って、こういう無駄なDrawCallを事前に検出し、素早く捨てべきです。
 
 ## これで作っていた作品
+
+>大羿射日、古中国の伝説の英雄神話をゲーム化した作品。
+>
+>太古の時、天に十個の太陽があり、その熱さのせいで民が苦しんでいた。プレーヤーは英雄「羿」になり、Joyconを使って天から狂っている太陽を射落として、皆を救うというゲームです。
+>
+>さらに、射落された太陽を使って、太陽神たちのドッジボール大会というミニゲームも友達と楽しめます。
+
+詳しくはこの[ページ](sun_shoot_jp.md)ご覧ください。
+
+PV↓
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/prv0hxfCRGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+ゲーム画面↓
+
+![Sun Shoot](../../assets/sun_shoot_title.png)
+![Sun Motion Aim](../../assets/sun_shoot_motion_pic_1.png)
+![Sun Motion Shoot](../../assets/sun_shoot_motion_pic_2.png)
+![Sun Mini Game](../../assets/sun_shoot_mini.png)
