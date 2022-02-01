@@ -10,6 +10,8 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 [Test Link Jadeite](docs/projects/jadeite_jp.md)
 
+[Test Link Sun Shoot](docs/projects/sun_shoot_jp.md)
+
 [Test Link RS Lib](docs/projects/rendersystem_jp.md)
 
 ### Markdown
