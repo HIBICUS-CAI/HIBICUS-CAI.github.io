@@ -14,6 +14,8 @@ title: About 大羿射日
 
 [HycFrame2D](hycframe2d_jp.md)より開発しました。
 
+![Manual](../../assets/sun_manual.png)
+
 ## ゲームシステム
 
 このゲームは二つの部分に分けられています :
@@ -23,16 +25,36 @@ title: About 大羿射日
     スティックかつボタン方式或いはモーション操作方式でのシューティング。
     
     弓を制御し、行き先を太陽の移動路線と合わせて矢を発射して、上手くいけば矢が太陽と当てられ、それを消すことができます。全ての太陽を消したらゲームクリアです。
+
+    ![Sun Shoot](../../assets/sun_basic.png)
     
-    天に太陽がある限り、畑はだんだん焦げてしまう（背景は普通の色から焦げる色に変換）。また、毎回矢を射出する時、弦にかかった力の大きさより弓のHPも減られます、HPが0になったら弓が折られます。
+    天に太陽がある限り、畑はだんだん焦げてしまう（背景は普通の色から焦げる色に変換）。
+
+    ![Burn Before](../../assets/sun_burn_before.png)
+
+    ![Burn After](../../assets/sun_burn_after.png)
+    
+    また、毎回矢を射出する時、弦にかかった力の大きさより弓のHPも減られます、HPが0になったら弓が折られます。
+
+    ![Broke Before](../../assets/sun_broke_before.png)
+
+    ![Broke After](../../assets/sun_broke_after.png)
     
     畑が一定程度に焦げたら、或いは弓が折られてしまうとゲームオーバーです。つまり、一定時間内に、かつ弓のHPが使い切る前に全ての太陽を射落とすというシステムです。
+
+    ![Success](../../assets/sun_success.png)
+
+    ![Fail](../../assets/sun_fail.png)
 
 - EXTRAとしての太陽神ドッジボール
 
     これは二人の遊びモードです。
+
+    ![Input](../../assets/sun_extra_input.png)
     
     各プレーヤーそれぞれ一つのjoyconを持って、自分側の太陽神を操作し、場にある太陽を拾って向こうに狙って投げ出す、三回当たったら勝というミニゲームです。
+
+    ![Extra](../../assets/sun_extra.png)
 
 ## PV動画
 
