@@ -12,6 +12,8 @@ title: About 大羿射日
 
 さらに、射落された太陽を使って、太陽神たちのドッジボール大会というミニゲームも友達と楽しめます。
 
+[HycFrame2D](hycframe2d_jp.md)より開発しました。
+
 ## ゲームシステム
 
 このゲームは二つの部分に分けられています :
@@ -37,3 +39,13 @@ title: About 大羿射日
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/prv0hxfCRGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## アピールしたいところ
+
+**本物の弓の操作感**
+
+このゲームを作ったきっかけは、せっかくスイッチ開発マシンを触れるチャンスので、スイッチではないと遊べないゲームを試したいという考えです。
+
+そして「リングフィット」を知り、本物のような弓と弦の操作感をゲームにすることを思いついました。
+
+左のjoyconを弓のように持って、右のjoyconを弦に構えた矢のように後ろに引っ張ったら、加速度とジャイロセンサー入力よりモーションで操作でき、HD振動の出力より張り切っている弦の振動感も感じられます。
+
+本当の弓の操作感を再現するため、この部分は結構力込めて調整しました。
