@@ -22,10 +22,18 @@ title: About 大羿射日
     
     弓を制御し、行き先を太陽の移動路線と合わせて矢を発射して、上手くいけば矢が太陽と当てられ、それを消すことができます。全ての太陽を消したらゲームクリアです。
     
-    天に太陽がある限り、畑はだんだん焦げてしまう（背景は普通の色から焦げる色に変換）
+    天に太陽がある限り、畑はだんだん焦げてしまう（背景は普通の色から焦げる色に変換）。また、毎回矢を射出する時、弦にかかった力の大きさより弓のHPも減られます、HPが0になったら弓が折られます。
+    
+    畑が一定程度に焦げたら、或いは弓が折られてしまうとゲームオーバーです。つまり、一定時間内に、かつ弓のHPが使い切る前に全ての太陽を射落とすというシステムです。
 
 - EXTRAとしての太陽神ドッジボール
 
+    これは二人の遊びモードです。
+    
+    各プレーヤーそれぞれ一つのjoyconを持って、自分側の太陽神を操作し、場にある太陽を拾って向こうに狙って投げ出す、三回当たったら勝というミニゲームです。
+
 ## PV動画
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/prv0hxfCRGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## アピールしたいところ
