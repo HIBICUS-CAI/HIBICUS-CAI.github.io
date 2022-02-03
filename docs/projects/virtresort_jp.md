@@ -17,13 +17,25 @@ title: About Virtual Resorter
 
 プレーヤーの目的は、それぞれの客種類のお好みを発見しつつ、挑戦を繰り返してより高いランクを取得し、お客たち皆楽しめるリゾートを作ることです。
 
+![Player Purpose](../../assets/resort_purpose.jpg)
+
 ラウンド開始＆終了の時、”謎のNPC”からヒントを受け取る可能性があります。
+
+![NPC Advice 1](../../assets/resort_npc_1.jpg)
+
+![NPC Advice 2](../../assets/resort_npc_2.jpg)
 
 また、各施設な感想発表は来客が遊ぶとき生放送弾幕の形で表示され、
 
+![Danmaku](../../assets/resort_danmaku.jpg)
+
 当ラウンドのランク発表する前、全体的な改善意見も表示されます。
 
+![Advice](../../assets/resort_feedback.jpg)
+
 さらに、オンライン機能をオンにしたら、他のプレーヤーに選択された人気選択肢も参考になります。
+
+![Online](../../assets/resort_online.jpg)
 
 以上の手段でお客の好みへの理解を深くにし、最高ランクを取得するの達成感を得ることは、このゲームのコンセントです。
 
@@ -39,9 +51,15 @@ title: About Virtual Resorter
 
     背景と人物がアニメーション付きなので、例え同じ色でも分かりやすいし、描画スタイルとしても特別感が感じられます。
 
+    ![Move Ani](../../assets/resort_move.gif)
+
+    ![Rank Ani](../../assets/resort_rank.gif)
+
 - 搭載したネット機能
 
     [MariaDB](https://mariadb.com/)を利用してランクと選択肢集計用データベースを作り、ペルソナ５の「この一日他のプレーヤーが取った行動ランキング」と似ていて、プレーヤーに参考になれる情報を提供しています。
+
+    ![Online 2](../../assets/resort_online.jpg)
 
     クラウドサーバーにデータベースを構築し、ゲームのクライアントに特定の権限を与えるという形で動作しています（オフできます）。毎回リザルトが出たら、今回作った施設の選択と最終リザルトをデータベースにアップロード、そして参考したいときそれらの情報をサーバーからダウンロードで、更新・閲覧を行っています。
 
