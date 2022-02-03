@@ -11,7 +11,7 @@ title: About Virtual Resorter
 
 お客様の好みを了解して、満足度より高いリゾートを作るというキャラクターベースのゲームです。
 
-自作キャラクターベースゲーム開発フレームワーク[CLIG](https://github.com/HIBICUS-CAI/CLIG)より作ったゲームで、HAL東京2021進級コンテスト（HEW）で銅賞受賞しました。
+これは自作キャラクターベースゲーム開発フレームワーク[CLIG](https://github.com/HIBICUS-CAI/CLIG)より作ったゲームで、HAL東京2021進級コンテスト（HEW）で銅賞受賞しました。
 
 ## ゲームシステム
 
