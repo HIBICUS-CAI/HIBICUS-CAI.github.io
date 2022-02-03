@@ -13,6 +13,10 @@ title: About Virtual Resorter
 
 これは自作キャラクターベースゲーム開発フレームワーク[CLIG](https://github.com/HIBICUS-CAI/CLIG)より作った、2021HAL東京進級コンテスト（HEW）で銅賞受賞したゲームです。
 
+## ゲームPV
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/_W7PwgBUOoA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## ゲームシステム
 
 プレーヤーの目的は、それぞれの客種類のお好みを発見しつつ、挑戦を繰り返してより高いランクを取得し、お客たち皆楽しめるリゾートを作ることです。
@@ -38,10 +42,6 @@ title: About Virtual Resorter
 ![Online](../../assets/resort_online.jpg)
 
 以上の手段でお客の好みへの理解を深くにし、最高ランクを取得するの達成感を得ることは、このゲームのコンセントです。
-
-## ゲームPV
-
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/_W7PwgBUOoA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## アピールしたいところ
 
