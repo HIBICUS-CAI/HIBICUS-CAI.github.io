@@ -7,13 +7,23 @@ title: About HycFrame2D
 
 >HycFrame2Dは、通用2Dゲームを開発できるを目標として作った、汎用フレームワークであります。
 
-[ソースコード](https://github.com/HIBICUS-CAI/HycFrame2D)
-
 フレームワークの特徴 :
 
 - Entity+Componentの組み方
 - シーンの内容物をJSON化してデータとして保存するのやり方
 - スクリプトに似てる特定コードを実行する仕組み
+
+**リンク**
+
+- [ソースコード](https://github.com/HIBICUS-CAI/HycFrame2D)
+
+## フレームを実行するため必要なもの（整合済）
+
+- [03_InputDevice](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) 自分で作った入力処理ライブラリー
+- [04_WindowManager](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) （Windowsバージョンのみ）自分で作ったWIN32アプリ管理ライブラリー
+- [GLFW3](https://www.glfw.org/) （OpenGLバージョンのみ）ウィンドウ制御ライブラリー
+- [texconv](https://github.com/microsoft/DirectXTex) イメージファイルをPNG・TGAファイルに変換するツール
+- [rapidjson](https://github.com/Tencent/rapidjson) JSONファイル解析ライブラリー
 
 ## フレームワークがサポートしている内容
 
@@ -37,14 +47,6 @@ title: About HycFrame2D
 |     (Actor)<br>[A]TimerComponent      |                                                                        複数のタイマーを作る<br>特定タイマーの開始、一時停止、リセット処理<br>ある時間に越えたどうかの判断                                                                         |
 |      (UI)<br>[U]BtnMapComponent       |                                                                                       隣のボタンを選択する機能<br>このボタンは選択されているかどうかの判断                                                                                        |
 |       (UI)<br>[U]TextComponent        |                                                                               キャラクタ配列より自動的に文字を描画する仕組み<br>標準フォマードサポート（\n・\t等）                                                                                |
-
-## フレームを実行するため必要なもの（整合済）
-
-- [03_InputDevice](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) 自分で作った入力処理ライブラリー
-- [04_WindowManager](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) （Windowsバージョンのみ）自分で作ったWIN32アプリ管理ライブラリー
-- [GLFW3](https://www.glfw.org/) （OpenGLバージョンのみ）ウィンドウ制御ライブラリー
-- [texconv](https://github.com/microsoft/DirectXTex) イメージファイルをPNG・TGAファイルに変換するツール
-- [rapidjson](https://github.com/Tencent/rapidjson) JSONファイル解析ライブラリー
 
 ## コードの組み方
 
