@@ -5,7 +5,7 @@ title: About HycFrame2D
 
 ## HycFrame2Dについて
 
->HycFrame2Dは、通用2Dゲームを開発できるを目標として作った汎用フレームワークであります。
+>HycFrame2Dは、通用2Dゲームを開発できるを目標として作った、汎用フレームワークであります。
 
 [ソースコード](https://github.com/HIBICUS-CAI/HycFrame2D)
 
@@ -20,7 +20,7 @@ title: About HycFrame2D
 主に四つの部分に分けられています :
 
 - 特定の処理をレジスター・実行するできるInteractionとInput仕組み
-- Interaction・Input以外に用意している多様なコンポーネント
+- Interaction・Input以外にも用意している多様なコンポーネント
 - SceneNodeに関する管理・操作機能
 - 音声・JSON解析等のサブシステム
 
@@ -28,10 +28,10 @@ title: About HycFrame2D
 
 |             Component種類             |                                                                                                                 提供している機能                                                                                                                  |
 | :-----------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| (Actor&UI)<br>[A/U]TransformComponent |                                                                                                       Objectの位置、角度と大きさ編集・参照                                                                                                        |
+| (Actor&UI)<br>[A/U]TransformComponent |                                                                                                      Objectの位置、角度と大きさの編集・参照                                                                                                       |
 |   (Actor&UI)<br>[A/U]InputComponent   |                                                                レジスターされていた入力関数を入力処理段階で自動的に呼び出す<br>Unity C# Scriptのようなカスタマイズできる処理仕組み                                                                |
 | (Actor&UI)<br>[A/U]InteractComponent  | レジスターされていた初期化関数を初期化段階で自動的に呼び出す<br>レジスターされていた更新用関数を更新段階で自動的に呼び出す<br>レジスターされていたリリース関数を削除する時自動的に呼び出す<br>Unity C# Scriptのようなカスタマイズできる処理仕組み |
-|  (Actor&UI)<br>[A/U]SpriteComponent   |                                                                                                       テクスチャの描画処理<br>Offset色処理                                                                                                        |
+|  (Actor&UI)<br>[A/U]SpriteComponent   |                                                                                                      テクスチャの描画処理<br>OffsetColor処理                                                                                                      |
 |   (Actor)<br>[A]CollisionComponent    |                                                                                        二つのものは当たっているかどうかの判断<br>円と四角形処理のサポート                                                                                         |
 |    (Actor)<br>[A]AnimateComponent     |                                                                         スプライトアニメーションの読み込み<br>特定のアニメーションに変更<br>アニメーションプレー速度調整                                                                          |
 |     (Actor)<br>[A]TimerComponent      |                                                                        複数のタイマーを作る<br>特定タイマーの開始、一時停止、リセット処理<br>ある時間に越えたどうかの判断                                                                         |
@@ -96,7 +96,7 @@ title: About HycFrame2D
     
     ![EC Scene](../../assets/h2d_ec_with_scene.png)
 
-    それと強いて言えば、これはECSではなく、Unityの方とより近いと思います。もし完全にECSのやり方ですれば、ゲームシステムに関する処理が複雑になり、ファイルに保存すると不確定要素が多くになるでしょう。従って私のやり方は、よく使われる機能（当たり判定、Transform処理等）をコンポーネントにし、ゲームシステムに関しての処理をフレームワークにレジスターされた関数ポインタ経由で行うと決めました。
+    それと強いて言えば、これはECSではなく、Unityの方とより近いと思います。もし完全にECSのやり方ですれば、ゲームシステムに関する処理が複雑になり、ファイルに保存すると不確定要素が多くになるでしょう。従って私のやり方は、よく使われる機能（当たり判定、Transform処理等）をコンポーネントにし、ゲームシステムに関する処理をフレームワークにレジスターされた関数ポインタ経由で行うと決めました。
 
     でもこれは悪い点ではないと思います。このやり方より、全てのゲームシステムに関する処理をInteract・Inputコンポーネントに集中でき、矛盾がない関数も再利用できるようにしました。例えば
     ```
@@ -217,7 +217,7 @@ title: About HycFrame2D
 
     このフレームワークのEntityとComponentは全部`new`で直接確保されています。処理は簡単ですが、CPUキャッシュをうまく利用できず、実行速度が減られると考えています。
 
-    [HycFrame3D](hycframe3d_jp.md)は同種類のComponentを一つの`vector`にまとめて、連続のデータ構造よりCPUキャッシュ利用率を上げることができます。
+    [HycFrame3D](hycframe3d_jp.md)は同種類のComponentを一つの`vector`にまとめて、連続のデータ構造よりCPUキャッシュ利用率を向上することができます。
 
 - まだ残っている問題点
   - 無駄の描画処理
@@ -232,7 +232,7 @@ title: About HycFrame2D
 >
 >太古の時、天に十個の太陽があり、その熱さのせいで民が苦しんでいた。プレーヤーは英雄「羿」になり、Joyconを使って天から狂っている太陽を射落として、皆を救うというゲームです。
 >
->さらに、射落された太陽を使って、太陽神たちのドッジボール大会というミニゲームも友達と楽しめます。
+>さらに、射落された太陽を使って、太陽神たちのドッジボール大会というミニーゲームも友達と楽しめます。
 
 詳しくはこの[ページ](sun_shoot_jp.md)をご覧ください。
 
@@ -243,6 +243,9 @@ PV↓
 ゲーム画面↓
 
 ![Sun Shoot](../../assets/sun_shoot_title.png)
+
 ![Sun Motion Aim](../../assets/sun_shoot_motion_pic_1.png)
+
 ![Sun Motion Shoot](../../assets/sun_shoot_motion_pic_2.png)
+
 ![Sun Mini Game](../../assets/sun_shoot_mini.png)
