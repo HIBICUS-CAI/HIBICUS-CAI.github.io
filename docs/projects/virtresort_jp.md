@@ -13,6 +13,12 @@ title: About Virtual Resorter
 
 これは、自作キャラクターベースゲーム開発フレームワーク[CLIG](https://github.com/HIBICUS-CAI/CLIG)より作った、2021HAL東京進級コンテスト（HEW）で銅賞受賞したゲームです。
 
+**リンク**
+
+- [ソースコード](https://github.com/HIBICUS-CAI/HEW_GAME)
+- [バイナリファイル](https://github.com/HIBICUS-CAI/HEW_GAME/releases/tag/v1.1.2)
+- [CLIGソースコード](https://github.com/HIBICUS-CAI/CLIG)
+
 ## ゲームPV
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/_W7PwgBUOoA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
