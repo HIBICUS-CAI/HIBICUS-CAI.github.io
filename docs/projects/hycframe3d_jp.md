@@ -12,6 +12,10 @@ title: About HycFrame3D
 - 柔軟性を持っているシーン設計
 - 備えたよく使われる機能
 
+**リンク**
+
+- [ソースコード](https://github.com/HIBICUS-CAI/HycFrame3D)
+
 ## 前身
 このフレームワークの前身は大体半年前作っていた2Dゲーム開発ようのものです（今はHycFrame2Dという名をつけました）。
 
@@ -191,9 +195,11 @@ Have 1 arguments:
 
 ![JADEITE Logo](../../assets/jadeite_logo.png)
 
->JADEITE、翡翠のことです。<br>
-最近結構CELESTEにハマっていて、それと似ている3D版を試しに作りたくて、このゲームを作りました。<br>詳しい内容はこの[ページ](jadeite_jp.md)ご覧ください<br>
-[リリースバイナリファイル](https://github.com/HIBICUS-CAI/HycFrame3D/releases/tag/JADEITE_v1.0)<br>[ソースコード](https://github.com/HIBICUS-CAI/HycFrame3D/tree/game-backup/JADEITE)
+>JADEITE、翡翠のことです。
+>
+>最近結構CELESTEにハマっていて、それと似ている3D版を試しに作りたくて、このゲームを作りました。
+>
+>詳しい内容はこの[ページ](jadeite_jp.md)ご覧ください
 
 簡易PV↓
 
@@ -202,7 +208,11 @@ Have 1 arguments:
 スクリーンショット↓
 
 ![JADEITE_1](../../assets/jadeite_1.jpg)
+
 ![JADEITE_2](../../assets/jadeite_2.jpg)
+
 ![JADEITE_3](../../assets/jadeite_3.jpg)
+
 ![JADEITE_4](../../assets/jadeite_4.jpg)
+
 ![JADEITE_5](../../assets/jadeite_5.jpg)
