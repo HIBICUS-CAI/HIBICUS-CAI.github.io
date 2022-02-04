@@ -7,7 +7,16 @@ title: About JADEITE
 ## JADEITEについて
 >JADEITEは、翡翠のこと。CELESTEに模倣して作った3Dバージョンです。
 
+**リンク**
+
+- [ソースコード](https://github.com/HIBICUS-CAI/HycFrame3D/tree/game-backup/JADEITE)
+- [バイナリファイル](https://github.com/HIBICUS-CAI/HycFrame3D/releases/tag/JADEITE_v1.0)
+
 ![JADEITE_logo](../../assets/jadeite_3.jpg)
+
+## プレイ動画
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/-1hSB3A7lp8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 入力サポートと操作方法
 
@@ -78,16 +87,14 @@ title: About JADEITE
 - `filter-level`後ろの数を`0`から`3`まで調整して保存、`0`に近いと処理量が少ない、`3`に近いと処理量が多い
 - まだ足りない場合、`particle-off`後ろの`false`を`true`にしてください（ですが、こうしたらビジュアル的にはちょっと減られると思います）
 
-## プレイ動画
-
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/-1hSB3A7lp8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ## アピールしたいところ
 
 - ゲームシステムはCELESTEを参照しました、簡単な操作でも色んな組合せができます
      ![CELESTE_Like](../../assets/jadeite_5.jpg)
 - [フレームワーク](hycframe3d_jp.md)よりの柔軟性
-- 画面です、次のページにこのゲームが使っている描画パイプラインについて説明します
+- ゲームの画面
+
+次のページにこのゲームが使っている描画パイプラインについて説明します
 
 ---
 
@@ -151,4 +158,4 @@ title: About JADEITE
 
 11. パイプライン完成
 
-詳しい内容はレンダリングシステムについてのページをご覧ください。
+詳しい内容は[レンダリングシステムについてのページ](rendersystem_jp.md)をご覧ください。
