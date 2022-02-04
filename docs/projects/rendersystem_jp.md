@@ -6,8 +6,10 @@ title: About My Render System Lib
 ## レンダリングシステムライブラリーについて
 
 >異なるスタイルの描画処理をサポートできる柔軟性を持ち、Windowsプラットフォームでのリアルタイムレンダリングライブラリーです
->
->[ソースコード](https://github.com/HIBICUS-CAI/PreWorkRenderEngine)
+
+**リンク**
+
+- [ソースコード](https://github.com/HIBICUS-CAI/PreWorkRenderEngine)
 
 このライブラリーは、レンダリングパイプラインを容易に構築できるため開発したものであります。
 
