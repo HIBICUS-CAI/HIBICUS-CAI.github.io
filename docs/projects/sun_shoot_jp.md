@@ -14,7 +14,17 @@ title: About 大羿射日
 
 [HycFrame2D](hycframe2d_jp.md)より開発しました。
 
+**リンク**
+
+- [ソースコード（Windowsバージョン）](https://github.com/HIBICUS-CAI/HycFrame2D/tree/EXAMPLE-BowAndArrow-DO-NOT-EDIT)
+
+**スイッチでのバイナリファイルは提供できませんので、ご了承ください。**
+
 ![Manual](../../assets/sun_manual.png)
+
+## PV動画
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/prv0hxfCRGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## ゲームシステム
 
@@ -55,10 +65,6 @@ title: About 大羿射日
     各プレーヤーはそれぞれ一つのjoyconを持って、自分側の太陽神を操作し、場にある太陽を拾って向こうに狙って投げ出す、三回当たったら勝というミニーゲームです。
 
     ![Extra](../../assets/sun_extra.png)
-
-## PV動画
-
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/prv0hxfCRGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## アピールしたいところ
 
