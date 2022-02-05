@@ -5,19 +5,19 @@ title: About HycFrame3D
 
 ![HycFrame3D_logo](../../assets/h3d_frame_logo.png)
 ## HycFrame3Dについて
->HycFrame3DはWindowsをプラットフォームにして、汎用性が持っている通用3Dゲーム開発できるのフレームワークを目指して作った物であります。
+>HycFrame3Dは、Windows環境で通用3Dゲームを効率的に開発できるを目標として作った汎用フレームワークです。
 
-- Entity-Component-System的な考え方よりのソフトウェアアーキテクチャ
+- Entity-Component-System的な考え方からのソフトウェアアーキテクチャ
 - 自由に構築可能な描画システム
 - 柔軟性を持っているシーン設計
-- 備えたよく使われる機能
+- 豊かな機能
 
 **リンク**
 
 - [ソースコード](https://github.com/HIBICUS-CAI/HycFrame3D)
 
 ## 前身
-このフレームワークの前身は大体半年前作っていた2Dゲーム開発ようのものです（今はHycFrame2Dという名をつけました）。
+このフレームワークの前身は、大体半年前に作った2Dゲーム開発フレームワークです（今はHycFrame2Dという名をつけました）。
 
 HycFrame2Dは様々の問題点があり、座標系の仕様もなかなか変なので、3Dゲーム開発としては足りない部分あまりにも多くて、新しいフレームワークを作るという話になってきました。
 
