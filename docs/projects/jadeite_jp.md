@@ -75,7 +75,7 @@ title: About JADEITE
 
     ![Adapter_Info](../../assets/h3d_adapter_config.png)
 
-- `(HycFrame3D/)Assets/Configs/render-deviceconfig.json`を開いて、**使いたいグラフィックカードの番号**を`force-adapter-index`後ろ`null`のところに上書きして保存してください。（nullはフレームワークより自動的に選択するという意味です）
+- `(HycFrame3D/)Assets/Configs/render-deviceconfig.json`を開いて、**使いたいグラフィックカードの番号**を`force-adapter-index`後ろ`null`のところに上書きして保存してください。（nullはフレームワークにより自動的に選択するという意味です）
 
 **もしそうしてもFPSはまだ足りない場合**、`(HycFrame3D/)Assets/Configs/render-effect-config.json`を開いて調整を行ってください。
 
@@ -91,7 +91,7 @@ title: About JADEITE
 
 - ゲームシステムはCELESTEを参照しました、簡単な操作でも色んな組合せができます
      ![CELESTE_Like](../../assets/jadeite_5.jpg)
-- [フレームワーク](hycframe3d_jp.md)よりの柔軟性
+- [フレームワーク](hycframe3d_jp.md)によりの柔軟性
 - ゲームの画面
 
 次のページにこのゲームが使っている描画パイプラインについて説明します

@@ -52,12 +52,12 @@ HycFrame2Dは様々の問題点があり、座標系の仕様もなかなか変�
 
 - Rootシステム（フレームワーク実体の起動・リリース・実行を管理する部分）
 - Sceneシステム（シーンの切替え・リリース・当シーンの参照とかの機能を提供している部分）
-- Factoryシステム（JSONファイルより新規シーンあるいは新規オブジェクトを生成する部分）
+- Factoryシステム（JSONファイルにより新規シーンあるいは新規オブジェクトを生成する部分）
 - Systemシステム（名前がちょっと怪しいが、これはECSの「S」の意味、全てのSystemを管理・駆動する部分）
 
 **紐つけるファイル**
 
-- 特定のSystemとComponentより呼び出す、特定なコード実行するの部分、関数ポインタでフレームワークにレジスター・紐付けています
+- 特定のSystemとComponentにより呼び出す、特定なコード実行するの部分、関数ポインタでフレームワークにレジスター・紐付けています
 
 フレームワークのソフトウェアアーキテクチャーについて、お主に次の図のように組み立ています。
 
@@ -75,13 +75,13 @@ ObjectとComponentを保存・管理するため、HycFrame2Dのやり方は、�
 
 そこで、こういう問題を解決ため、HycFrame3Dのやり方は、各Scene Nodeに対して、一つのObjects Containerと一つのComponents Containerを用意しています。中には各種類のComponent型の`std::vector`とそのComponentポインタ型の`std::unordered_map`があります。事前に`vector.reserve(MAX_COMP_SIZE)`で十分な大きさを確保して、配列にあるComponentを増やしてもポインタが無効にならないようにしています。
 
-SystemがComponentに対して更新処理はvector中のデータを使い、あるComponentのポインタを探すのは名前よりmapで検索を行っています。このような仕組みで、更新されているComponentはメモリに連続になって、CPU Cacheを利用して処理効率を上げますし、mapでの検索もO(1)に近い効率で行えます。
+SystemがComponentに対して更新処理はvector中のデータを使い、あるComponentのポインタを探すのは名前によりmapで検索を行っています。このような仕組みで、更新されているComponentはメモリに連続になって、CPU Cacheを利用して処理効率を上げますし、mapでの検索もO(1)に近い効率で行えます。
 
 ![Frame2D Comp Model](../../assets/h3d_3d_comp_model.png)
 
 でもこれでもう一つ新たな問題を招いてしまいました、特定のComponentをリリースすると、後ろ全てのComponentは前に移るので、mapにあるポインタはずれてしまう可能性があります。
 
-私のやり方は、ComponentのステータスをDESTORYに設定した後一旦そのまま置いておいて、同時にmapでポインタを探し出す。そして、ポインタとvectorの先頭ポインタよりこのComponentのindexを計算、ある`std::queue`に入れて、mapからこのComponentのポインタを削除すれば、削除の部分は完了。
+私のやり方は、ComponentのステータスをDESTORYに設定した後一旦そのまま置いておいて、同時にmapでポインタを探し出す。そして、ポインタとvectorの先頭ポインタによりこのComponentのindexを計算、ある`std::queue`に入れて、mapからこのComponentのポインタを削除すれば、削除の部分は完了。
 
 ![Comp Delete](../../assets/h3d_comp_delete.png)
 
@@ -94,7 +94,7 @@ HycFrame2Dを開発するときはまだECSのSystemがどのような役を担�
 ## フレームを実行するため必要なもの（整合済）
 
 - [03_InputDevice](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) 自分で作った入力処理ライブラリー
-- [03_RenderSystem_DX11](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) 自分で作ったDX11よりのレンダリングシステムライブラリー
+- [03_RenderSystem_DX11](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) 自分で作ったDX11によりのレンダリングシステムライブラリー
 - [04_WindowManager](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) 自分で作ったWIN32アプリ管理ライブラリー
 - [MyMeshConverter](https://github.com/HIBICUS-CAI/SelfTools/releases/tag/MyMeshConverter-v1.1) 自分で作った異なる拡張子のモデルファイルを統一されたフォーマットでJSONファイルあるいはバイナリファイルに変換するツール
 - [rapidjson](https://github.com/Tencent/rapidjson) JSONファイル解析ライブラリー
@@ -123,7 +123,7 @@ Have 1 arguments:
 
 お主に三つの内容に分けられています：
 
-- 関数ポインターより特別挙動のカスタマイズできるInputComponent & InteractComponet
+- 関数ポインターにより特別挙動のカスタマイズできるInputComponent & InteractComponet
 - InputとInteract以外多様な機能を提供しているComponents
 - その他
   - SceneNode管理
@@ -165,7 +165,7 @@ Have 1 arguments:
 
     ![Adapter_Info](../../assets/h3d_adapter_config.png)
 
-- `HycFrame3D/Assets/Configs/render-deviceconfig.json`を開いて、**使いたいグラフィックカードの番号**を`force-adapter-index`後ろ`null`のところに上書きして保存してください。（nullはフレームワークより自動的に選択するという意味です）
+- `HycFrame3D/Assets/Configs/render-deviceconfig.json`を開いて、**使いたいグラフィックカードの番号**を`force-adapter-index`後ろ`null`のところに上書きして保存してください。（nullはフレームワークにより自動的に選択するという意味です）
 
 ## 改善点
 
