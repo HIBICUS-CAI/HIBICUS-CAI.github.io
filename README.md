@@ -6,6 +6,8 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 [Test Link AboutMe](docs/articles/aboutme_jp.md)
 
+[Test Link Projects](docs/projects_jp.md)
+
 [Test Link HycFrame3D](docs/projects/hycframe3d_jp.md)
 
 [Test Link HycFrame2D](docs/projects/hycframe2d_jp.md)
