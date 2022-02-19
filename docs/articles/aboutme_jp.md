@@ -7,4 +7,4 @@ title: About Me
 
 ## 書類
 
-- [履歴書](履歴書_蔡元涵.pdf)
+- <a href="履歴書_蔡元涵.pdf" target="_blank">履歴書</a>
