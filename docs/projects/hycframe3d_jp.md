@@ -191,6 +191,11 @@ Have 1 arguments:
 
 もしできたら追々に追加する予定です。
 
+## 他の情報
+
+- 開発期間：設計約二ヶ月、実装約一週間
+- 開発ツール：Visual Studio、Visual Studio Code、RenderDoc、Git
+
 ## これで作っていた作品
 
 ![JADEITE Logo](../../assets/jadeite_logo.png)

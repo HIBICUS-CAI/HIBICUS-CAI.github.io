@@ -228,6 +228,11 @@ title: About HycFrame2D
 
     従って、こういう無駄なDrawCallを事前に検出し、素早く捨てべきです。
 
+## 他の情報
+
+- 開発期間：設計約一ヶ月、実装約二週間
+- 開発ツール：Visual Studio、Visual Studio Code、DirectXTex、Git
+
 ## これで作っていた作品
 
 >大羿射日、古中国の伝説の英雄神話をスイッチにゲーム化した作品。

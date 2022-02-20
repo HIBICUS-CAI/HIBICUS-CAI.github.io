@@ -159,3 +159,8 @@ title: About JADEITE
 11. パイプライン完成
 
 詳しい内容は[レンダリングシステムについてのページ](rendersystem_jp.md)をご覧ください。
+
+## 他の情報
+
+- 開発期間：実装（フレームワーク開発期間抜き）約一週間
+- 開発ツール：HycFrame3D、Visual Studio、Visual Studio Code、RenderDoc、Git、自作モデルファイル処理ツール

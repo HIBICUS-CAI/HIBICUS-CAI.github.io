@@ -79,3 +79,8 @@ title: About 大羿射日
 ![Motion Input](../../assets/sun_motion_input.png)
 
 本当の弓の操作感を再現するため、この部分は結構力込めて調整していました。
+
+## 他の情報
+
+- 開発期間：実装（フレームワーク開発期間抜き）約二週間
+- 開発ツール：HycFrame2D、Visual Studio、Visual Studio Code、Git
