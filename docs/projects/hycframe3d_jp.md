@@ -4,12 +4,14 @@ title: About HycFrame3D
 ---
 
 ![HycFrame3D_logo](../../assets/h3d_frame_logo.png)
-## HycFrame3Dについて
->HycFrame3Dは、Windows環境で通用3Dゲームを効率的に開発できるを目標として作った汎用フレームワークです。
 
-- Entity-Component-System的な考え方からのソフトウェアアーキテクチャ
+## HycFrame3Dについて
+
+>HycFrame3Dは、Windows環境で通用3Dゲームを効率的に開発できることを目標として作った、自作汎用開発フレームワークです。
+
+- Entity-Component-Systemを参考したソフトウェアアーキテクチャ
 - 自由に構築可能な描画システム
-- 柔軟性を持っているシーン設計
+- 柔軟なシーン仕組み
 - 豊かな機能
 
 **リンク**
@@ -19,27 +21,27 @@ title: About HycFrame3D
 ## 前身
 このフレームワークの前身は、大体半年前に作った2Dゲーム開発フレームワークです（今はHycFrame2Dという名をつけました）。
 
-HycFrame2Dは様々の問題点があり、座標系の仕様もなかなか変なので、3Dゲーム開発としては足りない部分あまりにも多くて、新しいフレームワークを作るという話になってきました。
+HycFrame2Dは様々の問題点があり、座標系の仕様もなかなか変なので、3Dゲーム開発としては足りない部分が多く、新しいフレームワークを作るという話になってきました。
 
-最初目指した改善点お主に以下のもの：
-- 汎用性が持っている座標系
-- CPUキャッシュにより効率いい組み方
-- もっと柔軟な描画パイプライン
+前身と比べると、最初目指した改善点お主に以下のもの：
+- 汎用な座標系
+- CPUキャッシュでの実行効率向上
+- 柔軟な描画パイプライン
 - 3Dに必要なコンポーネントを導入
 
 ## コードの組み方
-フレームワークの大体なアーキテクチャーは以下のように幾つの部分に分けられています。
+フレームワークのアーキテクチャーは以下のように幾つの部分に分けられています。
 
 - 絶対必要なベースツール
-- フレームワークの機能に使われている中間ツール・ファイル
+- フレームワークの機能に利用される中間ツール・ファイル
 - HycFrame3Dフレームワーク自体
-- フレームワークに紐つけているコードファイル
+- フレームワークに紐つけるコードファイル
 
 各部分について詳しい説明をします。
 
 **ベースツール**
 
-- 短いても経過時間を測れるタイマー（deltatime計算用）
+- 短い経過時間を測れるタイマー（deltatime計算用）
 - ログを標準フォーマットで出力するプリンター（実行上の不具合やデバッグメッセージを出力欄にプリントアウト用）
 
 **中間ツール・ファイル**
@@ -57,46 +59,46 @@ HycFrame2Dは様々の問題点があり、座標系の仕様もなかなか変�
 
 **紐つけるファイル**
 
-- 特定のSystemとComponentにより呼び出す、特定なコード実行するの部分、関数ポインタでフレームワークにレジスター・紐付けています
+- 特定のSystemとComponentに呼び出され、特定なコードを実行する部分、関数ポインタでフレームワークにレジスター・紐付けられます
 
-フレームワークのソフトウェアアーキテクチャーについて、お主に次の図のように組み立ています。
+フレームワークのソフトウェアアーキテクチャーにつきまして、お主に図のように組み立ています。
 
 ![Frame Content](../../assets/h3d_frame_content.png)
 
 ## 特に頑張ったところ
 
-前身としてのHycFrame2Dと比べて最大な改善点は、**描画パイプラインの進化**と**ObjectとComponentの保存・管理の仕方**です。描画パイプラインは[03_RenderSystem_DX11](https://github.com/HIBICUS-CAI/PreWorkRenderEngine)にかかっているので、[別の文章](rendersystem_jp.md)で紹介させていただきます。
+前身としてのHycFrame2Dと比べて最大な改善点は、**描画パイプラインの進化**と**Object＆Componentの保存・管理の仕組み**です。描画パイプラインは[03_RenderSystem_DX11](https://github.com/HIBICUS-CAI/PreWorkRenderEngine)にかかっているので、[別の文章](rendersystem_jp.md)で紹介させていただきます。
 
 ObjectとComponentを保存・管理するため、HycFrame2Dのやり方は、それらを全部`new`で生成し、各Objectは所属のComponentポインタを更新順で`std::vector`メンバー変数に入れて保存して、そして更新するときはこの配列にある全てのComponentの更新関数を一個ずつ呼び出しています。
 
-でもこういうやり方は問題点があります。まずComponentは全部バーチャル関数の形で更新を行うので、この部分はすでにパフォーマンスを下げています。その上、全てのObjectとComponentは`new`で生成されてして、全てのComponentの更新処理を行うと、CPU Cacheにはほぼ利用されず、それぞれのポインタ指向物がメモリから探し出したまで、CPUに読み込めないので、パフォーマンスはさらに下げられていると思います。
+でもこういうやり方は問題点があります。まずComponentの更新処理は全部バーチャル関数の形で行うので、この部分はすでにパフォーマンスを下げています。その上、全てのObjectとComponentは全部`new`で生成されてして、全てのComponentの更新処理を行う時、CPU Cacheにはほぼ利用されず、それぞれのポインタ指向物をメモリから探し出すまで、CPUに読み込めないので、パフォーマンスはさらに下げられていると思います。
 
 ![Frame2D Comp Model](../../assets/h3d_2d_comp_model.png)
 
-そこで、こういう問題を解決ため、HycFrame3Dのやり方は、各Scene Nodeに対して、一つのObjects Containerと一つのComponents Containerを用意しています。中には各種類のComponent型の`std::vector`とそのComponentポインタ型の`std::unordered_map`があります。事前に`vector.reserve(MAX_COMP_SIZE)`で十分な大きさを確保して、配列にあるComponentを増やしてもポインタが無効にならないようにしています。
+このような問題を解決するため、HycFrame3Dのやり方は、各Scene Nodeに対して、一つのObjects Containerと一つのComponents Containerを用意しています。Components Containerの中には各種類のComponent型の`std::vector`とそのComponentポインタ型の`std::unordered_map`があります。その上、事前に`vector.reserve(MAX_COMP_SIZE)`で十分な大きさを確保しているので、配列に新しいComponentを入れてもポインタが無効にならないようにしています。
 
-SystemがComponentに対して更新処理はvector中のデータを使い、あるComponentのポインタを探すのは名前によりmapで検索を行っています。このような仕組みで、更新されているComponentはメモリに連続になって、CPU Cacheを利用して処理効率を上げますし、mapでの検索もO(1)に近い効率で行えます。
+SystemでComponentに対する更新処理を行う時にはvector中のデータを使い、あるComponentのポインタを探す時には名前によりmapで検索を行っています。このような仕組みで、更新されるComponentはメモリに連続になって、CPU Cacheを利用して処理効率を上げますし、検索したい時もO(1)に近い効率で行えます。
 
 ![Frame2D Comp Model](../../assets/h3d_3d_comp_model.png)
 
-でもこれでもう一つ新たな問題を招いてしまいました、特定のComponentをリリースすると、後ろ全てのComponentは前に移るので、mapにあるポインタはずれてしまう可能性があります。
+でもこれはもう一つ新たな問題を招いてしまいました、特定のComponentをリリースすると、後ろ全てのComponentは前に移るので、mapにあるポインタはずれてしまう可能性があります。
 
 私のやり方は、ComponentのステータスをDESTORYに設定した後一旦そのまま置いておいて、同時にmapでポインタを探し出す。そして、ポインタとvectorの先頭ポインタによりこのComponentのindexを計算、ある`std::queue`に入れて、mapからこのComponentのポインタを削除すれば、削除の部分は完了。
 
 ![Comp Delete](../../assets/h3d_comp_delete.png)
 
-そして追加する時、まずはその型のqueueから既存のindexを取り出す、vectorのindex番目のところに追加したい物に上書きすれば完成です。
+そして追加する時、まずはその型のqueueから既存のindexを取り出す、vectorのindex番目のところに追加したい物を上書きすれば完成です。
 
 ![Comp Insert](../../assets/h3d_comp_insert.png)
 
-HycFrame2Dを開発するときはまだECSのSystemがどのような役を担当しているかわかっていなかったが、今その重要性への理解は一歩深くにしたと思います。
+HycFrame2Dを開発するときはまだECSのSystemがどのような役を担当しているかわかっていなかったが、今はその重要性への理解を一歩深くにしたと思います。
 
 ## フレームを実行するため必要なもの（整合済）
 
-- [03_InputDevice](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) 自分で作った入力処理ライブラリー
-- [03_RenderSystem_DX11](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) 自分で作ったDX11によりのレンダリングシステムライブラリー
-- [04_WindowManager](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) 自分で作ったWIN32アプリ管理ライブラリー
-- [MyMeshConverter](https://github.com/HIBICUS-CAI/SelfTools/releases/tag/MyMeshConverter-v1.1) 自分で作った異なる拡張子のモデルファイルを統一されたフォーマットでJSONファイルあるいはバイナリファイルに変換するツール
+- [03_InputDevice](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) 自作入力処理ライブラリー
+- [03_RenderSystem_DX11](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) DX11によりの自作レンダリングシステムライブラリー
+- [04_WindowManager](https://github.com/HIBICUS-CAI/PreWorkRenderEngine) 自作WIN32アプリ管理ライブラリー
+- [MyMeshConverter](https://github.com/HIBICUS-CAI/SelfTools/releases/tag/MyMeshConverter-v1.1) 異なる拡張子のモデルファイルを統一フォーマットに変換できる自作ツール
 - [rapidjson](https://github.com/Tencent/rapidjson) JSONファイル解析ライブラリー
 - [bullet](https://github.com/bulletphysics/bullet3) 物理演算用ライブラリー（使う部分は当たり判定だけ）
 
@@ -123,7 +125,7 @@ Have 1 arguments:
 
 お主に三つの内容に分けられています：
 
-- 関数ポインターにより特別挙動のカスタマイズできるInputComponent & InteractComponet
+- 紐付けた関数により特別挙動をカスタマイズできるInputComponent & InteractComponet
 - InputとInteract以外多様な機能を提供しているComponents
 - その他
   - SceneNode管理
@@ -131,20 +133,20 @@ Have 1 arguments:
 
 詳しい内容は以下の通り：
 
-| Component種類                         | 提供している機能                                                                                                                                                                                                                                  |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| (Actor&UI)<br>[A/U]TransformComponent | Objectの位置、角度と大きさ調整<br>１フレーム前のデータをバックアップ<br>このフレーム内に編集されたデータをロールバック                                                                                                                            |
-| (Actor&UI)<br>[A/U]TimerComponent     | 複数のタイマーを作る<br>特定タイマーの開始、一時停止、リセット処理<br>ある時間に越えたどうかの判断                                                                                                                                                |
-| (Actor&UI)<br>[A/U]InputComponent     | レジスターされていた入力関数を入力処理段階で自動的に呼び出す<br>Unity C# Scriptのようなカスタマイズできる処理仕組み                                                                                                                               |
-| (Actor&UI)<br>[A/U]InteractComponent  | レジスターされていた初期化関数を初期化段階で自動的に呼び出す<br>レジスターされていた更新用関数を更新段階で自動的に呼び出す<br>レジスターされていたリリース関数を削除する時自動的に呼び出す<br>Unity C# Scriptのようなカスタマイズできる処理仕組み |
-| (Actor&UI)<br>[A/U]AudioComponent     | ロードされていた音声データをBGMとSEの形で再生                                                                                                                                                                                                     |
-| (Actor)<br>[A]CollisionComponent      | Collision ShapeとCollision Object生成<br>あるObjectとの当たり結果<br>当たっている場所の世界空間座標を計算                                                                                                                                         |
-| (Actor)<br>[A]MeshComponent           | モデルのInstanceを新規作成<br>モデル描画サポート<br>複数のモデルをグループ化して同じTransformデータで表示する                                                                                                                                     |
-| (Actor)<br>[A]LightComponent          | 光源を作成する<br>光源のBloomと照度についてのデータを動的編集                                                                                                                                                                                     |
-| (Actor)<br>[A]ParticleComponent       | パーティクルエミッターを作成する<br>エミッターの終始大きさ、終始色、噴出物理量とかのデータを動的編集                                                                                                                                              |
-| (UI)<br>[U]SpriteComponent            | テクスチャ描画サポート<br>UV値調整<br>色の偏移量調整                                                                                                                                                                                              |
-| (UI)<br>[U]AnimateComponent           | 複数のスプライトアニメーションを読み込み<br>特定のアニメーションに変わる<br>再生速度調整                                                                                                                                                          |
-| (UI)<br>[U]ButtonComponent            | 隣のボタンを選択する機能<br>このボタンは選択されているかどうかの判断<br>カーソルとキーボード操作サポート                                                                                                                                          |
+| Component種類                         | 提供している機能                                                                                                                                                                                                                        |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| (Actor&UI)<br>[A/U]TransformComponent | Objectの位置、角度と大きさ調整<br>１フレーム前のデータをバックアップ<br>このフレーム内に編集されたデータをロールバック                                                                                                                  |
+| (Actor&UI)<br>[A/U]TimerComponent     | 複数のタイマーを作成<br>特定タイマーの開始、一時停止、リセット処理<br>ある時間に越えたどうかの判断                                                                                                                                      |
+| (Actor&UI)<br>[A/U]InputComponent     | レジスターされた入力関数を入力処理段階で自動的に呼び出す<br>Unity C# Scriptのような処理をカスタマイズできる仕組み                                                                                                                       |
+| (Actor&UI)<br>[A/U]InteractComponent  | レジスターされた初期化関数を初期化段階で自動的に呼び出す<br>レジスターされた更新用関数を更新段階で自動的に呼び出す<br>レジスターされたリリース関数を削除する時自動的に呼び出す<br>Unity C# Scriptのような処理をカスタマイズできる仕組み |
+| (Actor&UI)<br>[A/U]AudioComponent     | ロードされた音声データをBGMとSEの形で再生                                                                                                                                                                                               |
+| (Actor)<br>[A]CollisionComponent      | Collision ShapeとCollision Object生成<br>あるObjectとの当たり判定<br>当たっている場所の世界空間座標を計算                                                                                                                               |
+| (Actor)<br>[A]MeshComponent           | モデルのInstanceを新規作成<br>モデル描画サポート<br>複数のモデルをグループ化して同じTransformデータで表示する                                                                                                                           |
+| (Actor)<br>[A]LightComponent          | 光源を作成する<br>光源のBloomと照度についてのデータを動的編集                                                                                                                                                                           |
+| (Actor)<br>[A]ParticleComponent       | パーティクルエミッターを作成する<br>エミッターの終始大きさ、終始色、噴出物理量とかのデータを動的編集                                                                                                                                    |
+| (UI)<br>[U]SpriteComponent            | テクスチャ描画サポート<br>UV値調整<br>色の偏移量調整                                                                                                                                                                                    |
+| (UI)<br>[U]AnimateComponent           | 複数のスプライトアニメーションの読み込み<br>特定のアニメーションに変わる<br>再生速度調整                                                                                                                                                |
+| (UI)<br>[U]ButtonComponent            | 隣のボタンを選択する機能<br>このボタンは選択されているかどうかの判断<br>カーソルとキーボード操作サポート                                                                                                                                |
 
 <br>
 
@@ -155,9 +157,9 @@ Have 1 arguments:
 
 **グラフィックカード配置**
 
-毎秒のフレーム数が足りない場合（60以下）、先ずゲームのフレームワークは正しいグラフィックカードを使用しているかどうかを確認してお願いします。
+毎秒のフレーム数が足りない場合（60以下）、まずフレームワークは正しいグラフィックカードを使用しているかどうかを確認してください。
 
-このフレームワークは自動的により正しいグラフィックカードを選択していますが、もし万が一違うものに選んだら、どうかご自分で正しいグラフィックカード番号をコンフィグレーションファイルに記入お願いします。
+フレームワークは自動的により正しいグラフィックカードを選択していますが、もし万が一違うものに選んだら、ご自分で正しいグラフィックカード番号をコンフィグレーションファイルに記入する必要があります。
 
 記入方は以下の通り：
 
@@ -169,27 +171,27 @@ Have 1 arguments:
 
 ## 改善点
 
-私の視点からこのフレームワークはそこそこ出来ていると思うが、まだ完備とは言えません。色々な改善すべき点がまだ残っています。
+私の視点からこのフレームワークはそこそこ出来ていると思うが、まだ完備とは言えません。色々な改善すべき点はまだ残っています。
 
 - Scene管理
-  - 現在のDrawCallは選別せず一気にレンダリングシステムに渡しています、Instanceを利用しているが、異なるモデルの数がいっぱい増えたらかなりの無駄作業が出てしまうそうですので、OctTreeやBSPなどの技術を導入すべきです
+  - 現在のDrawCallは選別せず一気にレンダリングシステムに渡しています、Instanceを利用しているが、異なるモデルの数が沢山増えたらかなりの無駄作業が出てしまうので、OctTreeやBSPなどの技術を導入すべきです
 - マルチスレッド
-  - System実行の部分はそれぞれに優先順位を付けて、マルチスレッドで駆動すると効率を一層上がれるかもしれません
+  - System実行の部分はそれぞれに優先順位を付けて、マルチスレッドで駆動すると実行効率を一層上がれるかもしれません
   - RenderSystemのContainerはマルチスレッドでの安全動作がまだできないので、HycFrame2Dのようなマルチスレッドベースのシーン遷移はまだできないです
 - 音声操作
   - できれば3D空間のようなSE再生機能を作って欲しいです
-  - XAudioに関しての内容をもっと勉強する必要があります
+  - XAudioに関する内容をもっと勉強する必要があります
 - キャッシュ最適化
-  - 現在のキャッシュ利用率はただ以前のものと比べて優れているだけ、でも色んなところはまだ全然Cache Friendlyと言えない、もっと効率いいデータ構造が必要です。
+  - 現在のキャッシュ利用率はただ以前のものと比べて優れているだけ、でも色んなところはまだ全然Cache Friendlyと言えないので、もっと効率いいデータ構造が必要です。
 - 機能追加
-  - できればモデル（FBXとか）のアニメーションも導入したいです
-  - カメラを追加、操作できるComponentも導入したいです
-  - 文字列をそのままテクスチャに変更できる技術が欲しい、freetypeに関しての内容を勉強すべきです
+  - できればモデル（FBXとか）のアニメーションも導入できるようにしたいです
+  - カメラを追加、操作できるComponentを導入したいです
+  - 文字列をそのままテクスチャに変更できる技術が欲しい、freetypeに関する内容を勉強すべきです
 - AI向き
-  - AIをもっと簡単に動けるように、マップにNodeを付ける手段やComponentが欲しいです
-  - 効率いい道調べ方法（A*を改善）も勉強する必要があります
+  - AIをもっと簡単に動けるように、マップにNodeを付ける手段や関連Componentが欲しいです
+  - 効率いい道調べ方法（A*を改善）を勉強する必要があります
 
-もしできたら追々に追加する予定です。
+できたら追々に追加する予定です。
 
 ## 他の情報
 
@@ -200,11 +202,11 @@ Have 1 arguments:
 
 ![JADEITE Logo](../../assets/jadeite_logo.png)
 
->JADEITE、翡翠のことです。
+>JADEITEとは、翡翠のことです。
 >
->最近結構CELESTEにハマっていて、それと似ている3D版を試しに作りたくて、このゲームを作りました。
->
->詳しい内容はこの[ページ](jadeite_jp.md)ご覧ください
+>2DインディーズゲームCELESTEを3D版に拡張したゲームです。
+
+詳しい内容はこの[ページ](jadeite_jp.md)ご覧ください
 
 簡易PV↓
 
