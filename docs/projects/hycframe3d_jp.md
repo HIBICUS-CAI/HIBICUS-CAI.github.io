@@ -16,13 +16,9 @@ title: About HycFrame3D
 
 **リンク**
 
-- [ソースコード](https://github.com/HIBICUS-CAI/HycFrame3D)
+- ソースコード
 
   [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=HIBICUS-CAI&repo=HycFrame3D&show_owner=true)](https://github.com/anuraghazra/github-readme-stats)
-
-  <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=HIBICUS-CAI&repo=HycFrame3D&show_owner=true" target="_blank" />
-</a>
 
 ## 前身
 このフレームワークの前身は、大体半年前に作った2Dゲーム開発フレームワークです（今はHycFrame2Dという名をつけました）。
