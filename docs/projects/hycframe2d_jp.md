@@ -15,7 +15,9 @@ title: About HycFrame2D
 
 **リンク**
 
-- [ソースコード](https://github.com/HIBICUS-CAI/HycFrame2D)
+- ソースコード
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=HIBICUS-CAI&repo=HycFrame2D&show_owner=true)](https://github.com/HIBICUS-CAI/HycFrame2D)
 
 ## フレームを実行するため必要なもの（整合済）
 

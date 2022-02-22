@@ -20,3 +20,9 @@ title: My Projects
 |      [JADEITE](projects/jadeite_jp.md)      | HycFrame3Dで作った3Dゲーム（Windows）  |
 |    [大羿射日](projects/sun_shoot_jp.md)     | HycFrame2Dで作った2Dゲーム（スイッチ） |
 | [幻想リゾーター](projects/virtresort_jp.md) |      コンソールゲーム（Windows）       |
+
+## プログラミングについての情報
+
+[![HIBICUS-CAI's GitHub stats](https://github-readme-stats.vercel.app/api?username=HIBICUS-CAI&show_icons=true&theme=vue&count_private=true&hide=contribs,prs,issues&include_all_commits=true&locale=ja)](https://github.com/HIBICUS-CAI)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=HIBICUS-CAI&theme=vue&locale=ja)](https://github.com/HIBICUS-CAI)

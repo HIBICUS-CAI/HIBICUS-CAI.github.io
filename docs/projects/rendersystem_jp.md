@@ -9,7 +9,9 @@ title: About My Render System Lib
 
 **リンク**
 
-- [ソースコード](https://github.com/HIBICUS-CAI/PreWorkRenderEngine)
+- ソースコード
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=HIBICUS-CAI&repo=PreWorkRenderEngine&show_owner=true)](https://github.com/HIBICUS-CAI/PreWorkRenderEngine)
 
 このライブラリーは、レンダリングパイプラインを容易に構築できるため開発したものです。
 

@@ -15,8 +15,14 @@ title: About Virtual Resorter
 
 **リンク**
 
-- [CLIGソースコード](https://github.com/HIBICUS-CAI/CLIG)
-- [ソースコード](https://github.com/HIBICUS-CAI/HEW_GAME)
+- CLIGソースコード
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=HIBICUS-CAI&repo=CLIG&show_owner=true)](https://github.com/HIBICUS-CAI/CLIG)
+
+- ソースコード
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=HIBICUS-CAI&repo=HEW_GAME&show_owner=true)](https://github.com/HIBICUS-CAI/HEW_GAME)
+
 - [バイナリファイル](https://github.com/HIBICUS-CAI/HEW_GAME/releases/tag/v1.1.2)
 
 ## ゲームPV
