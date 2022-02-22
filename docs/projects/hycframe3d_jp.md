@@ -20,8 +20,8 @@ title: About HycFrame3D
 
   [![Repo Card](https://github-readme-stats.vercel.app/api/pin/?username=HIBICUS-CAI&repo=HycFrame3D&show_owner=true)](https://github.com/anuraghazra/github-readme-stats)
 
-  <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=HIBICUS-CAI&repo=HycFrame3D&show_owner=true" />
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=HIBICUS-CAI&repo=HycFrame3D&show_owner=true" target="_blank" />
 </a>
 
 ## 前身
