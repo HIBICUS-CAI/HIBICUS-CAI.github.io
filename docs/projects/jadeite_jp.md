@@ -3,6 +3,10 @@ layout: default
 title: About JADEITE
 ---
 
+[【作品集　目次】](../projects_jp.md)
+
+---
+
 ![JADEITE_logo](../../assets/jadeite_logo.png)
 
 ## JADEITEについて
@@ -165,3 +169,7 @@ title: About JADEITE
 
 - 開発期間：実装（フレームワーク開発期間抜き）約一週間
 - 開発ツール：HycFrame3D、Visual Studio、Visual Studio Code、RenderDoc、Git、自作モデルファイル処理ツール
+
+---
+
+[【作品集　目次】](../projects_jp.md)

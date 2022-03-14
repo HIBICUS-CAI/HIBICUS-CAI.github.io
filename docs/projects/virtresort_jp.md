@@ -3,6 +3,10 @@ layout: default
 title: About Virtual Resorter
 ---
 
+[【作品集　目次】](../projects_jp.md)
+
+---
+
 ![Title](../../assets/resort_title.png)
 
 ## 幻想リゾーターについて
@@ -89,3 +93,7 @@ title: About Virtual Resorter
 
 - 開発期間：元フレームワークの調整約一週間、ゲーム開発約一ヶ月
 - 開発ツール：CLIG、Visual Studio、Git
+
+---
+
+[【作品集　目次】](../projects_jp.md)
